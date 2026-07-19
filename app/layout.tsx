@@ -10,22 +10,27 @@ export async function generateMetadata(): Promise<Metadata> {
   const domain = headers().get("x-domain") || "";
   const config = getDomainConfig(domain);
   return {
-    title: `${config.neighborhood} | Homes By Dr. Jan Duffy`,
+    title: "Homes for Sale in Anthem Henderson, NV | Homes By Dr. Jan Duffy",
     description: config.description,
     keywords: config.keywords,
     openGraph: {
       title: "Anthem Henderson | Homes By Dr. Jan Duffy",
       description: config.description,
       type: "website",
+      images: [{ url: "/realty/heroes/hero-homes-for-sale.png" }],
     },
   };
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={GeistSans.className}>
-      <head>
-        {/* WidgetTracker */}
+    <html lang="en" className={`${GeistSans.className} dark`}>
+      <body className="antialiased">
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          strategy="afterInteractive"
+        />
         <Script id="widget-tracker" strategy="afterInteractive">{`
           (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
           {(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"),
@@ -35,8 +40,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           window.widgetTracker("create","WT-XQHVYQWW");
           window.widgetTracker("send","pageview");
         `}</Script>
-      </head>
-      <body>
         {children}
         <Analytics />
       </body>

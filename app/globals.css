@@ -2,32 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Visual system aligned with findahomeinlasvegas.com listing pages:
+  warm dark canvas, amber primary, tight tracking headlines.
+*/
+:root {
+  --background: #100c09;
+  --foreground: #f3f1ee;
+  --card: #1c1713;
+  --card-foreground: #f3f1ee;
+  --primary: #f98f3a;
+  --primary-foreground: #fafafa;
+  --secondary: #25211d;
+  --muted: #231e19;
+  --muted-foreground: #958e86;
+  --accent: #26211c;
+  --border: rgb(255 255 255 / 0.1);
+  --input: rgb(255 255 255 / 0.12);
+  --ring: #f98f3a;
+  --radius: 0.625rem;
+}
+
 @layer base {
-  a,
-  button {
-    @apply transition;
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 
   a {
-    @apply text-emerald-500 underline hover:bg-emerald-100
-        outline-0 focus:ring-2 focus:ring-offset-1 focus:ring-emerald-500;
+    @apply outline-none transition-colors;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply ring-2 ring-offset-2;
+    --tw-ring-color: var(--ring);
+    --tw-ring-offset-color: var(--background);
   }
 
   ::selection {
-    @apply bg-emerald-200 text-emerald-950;
-  }
-
-  label,
-  strong,
-  b {
-    @apply font-semibold;
+    background-color: color-mix(in oklab, var(--primary) 35%, transparent);
+    color: var(--foreground);
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply text-balance;
+    @apply text-balance tracking-tight;
   }
 
   p {
@@ -37,7 +68,6 @@
 
 /* ===== RealScout Widget Styling ===== */
 
-/* RealScout Simple Search - Desktop */
 realscout-simple-search {
   --rs-ss-font-primary-color: #1e293b;
   --rs-ss-searchbar-border-color: #e2e8f0;
@@ -47,13 +77,11 @@ realscout-simple-search {
   --rs-ss-background-color: rgba(255, 255, 255, 0.95);
 }
 
-/* RealScout Office Listings */
 realscout-office-listings {
-  --rs-listing-divider-color: #2563eb;
+  --rs-listing-divider-color: #f98f3a;
   width: 100%;
 }
 
-/* RealScout container wrapper */
 .realscout-wrapper {
   display: flex;
   justify-content: center;
@@ -62,7 +90,6 @@ realscout-office-listings {
   padding: 0 1rem;
 }
 
-/* Mobile Responsive: Tablet */
 @media (max-width: 768px) {
   realscout-simple-search {
     --rs-ss-widget-width: 100% !important;
@@ -74,7 +101,6 @@ realscout-office-listings {
   }
 }
 
-/* Mobile Responsive: Phone */
 @media (max-width: 480px) {
   realscout-simple-search {
     --rs-ss-widget-width: 100% !important;
@@ -83,5 +109,44 @@ realscout-office-listings {
 
   .realscout-wrapper {
     padding: 0 1rem;
+  }
+}
+
+/* Subtle motion for listing-page presence */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
+
+  .motion-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+
+  .motion-delay-1 {
+    animation-delay: 0.12s;
+  }
+
+  .motion-delay-2 {
+    animation-delay: 0.24s;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

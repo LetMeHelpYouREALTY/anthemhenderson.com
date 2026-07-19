@@ -1,229 +1,94 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Company Info */}
-          <div>
-            <h3 className="font-bold text-xl mb-4">Anthem Henderson</h3>
-            <p className="text-slate-300 mb-1 text-sm font-medium">Homes By Dr. Jan Duffy</p>
-            <p className="text-slate-300 mb-4 text-sm">
-              Anthem Henderson real estate — Sun City Anthem, Solera, Country Club, and Highlands.
-              Berkshire Hathaway HomeServices Nevada Properties.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="http://drjanduffy.realscout.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="http://drjanduffy.realscout.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="http://drjanduffy.realscout.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
+    <footer role="contentinfo">
+      <div className="w-full border-y border-border bg-card/40">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-5">
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-[3px] border-primary">
+                <Image
+                  src="/realty/dr-jan-duffy.jpg"
+                  alt="Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties"
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                  Ready to Make Your Move?
+                </p>
+                <h2 className="mt-2 text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                  Talk to Dr. Jan Duffy Today
+                </h2>
+                <p className="mt-2 max-w-md text-pretty text-sm text-muted-foreground">
+                  Buying or selling in Anthem Henderson — Sun City Anthem, Solera, Country Club, or
+                  Highlands — start with a live comps call.
+                </p>
+              </div>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="http://drjanduffy.realscout.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  All Properties
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/neighborhoods"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Neighborhoods
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/why-berkshire-hathaway"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Why BHHS
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/market-report"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Market Report
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  About Dr. Jan
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Real Estate Services</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/buyers"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Home Buying
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/buyers/california-relocator"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  California Relocators
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sellers"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Home Selling
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/luxury-homes"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Luxury Homes
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/55-plus-communities"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  55+ Communities
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/new-construction"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  New Construction
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/market-insights"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Market Insights
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info - NAP (Name, Address, Phone) */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Contact Dr. Jan Duffy</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300 text-sm">
-                  9406 W Lake Mead Blvd, Suite 100
-                  <br />
-                  Las Vegas, NV 89134
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
-                <Link
-                  href="tel:+17025001942"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  (702) 500-1942
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
-                <Link
-                  href="mailto:homes@heyberkshire.com"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  homes@heyberkshire.com
-                </Link>
-              </li>
-            </ul>
+            <div className="flex flex-col items-center gap-3 sm:items-end">
+              <a
+                href="tel:+17022221964"
+                className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-lg bg-primary px-8 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <Phone className="h-5 w-5" aria-hidden="true" />
+                (702) 222-1964
+              </a>
+              <Link
+                href="/contact"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                Or send a message
+              </Link>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="border-t border-slate-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-400 text-sm text-center md:text-left">
-              © {currentYear} Anthem Henderson | Homes By Dr. Jan Duffy. Berkshire Hathaway
-              HomeServices Nevada Properties. All Rights Reserved.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link href="/faq" className="text-slate-400 hover:text-white transition-colors">
-                FAQ
-              </Link>
-              <Link href="/sitemap.xml" className="text-slate-400 hover:text-white transition-colors">
-                Sitemap
-              </Link>
+      <div className="w-full bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex flex-col gap-1">
+              <p className="text-sm font-semibold text-foreground">
+                Anthem Henderson | Homes By Dr. Jan Duffy
+              </p>
+              <p className="text-xs text-muted-foreground">
+                © {currentYear} Dr. Jan Duffy · NV Lic. #S.0197614.LLC · Berkshire Hathaway
+                HomeServices Nevada Properties · 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV
+                89134
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-8 w-8 shrink-0"
+                aria-hidden="true"
+                fill="currentColor"
+              >
+                <path d="M12 3L2 12h3v9h6v-5h2v5h6v-9h3L12 3zm0 2.5l7 6.3V20h-4v-5H9v5H5v-8.2l7-6.3z" />
+                <rect x="8" y="13" width="8" height="1.5" />
+                <rect x="8" y="15.5" width="8" height="1.5" />
+              </svg>
+              <span className="max-w-[220px] text-left leading-snug">
+                Equal Housing Opportunity. We are pledged to the letter and spirit of U.S. policy
+                for the achievement of equal housing opportunity.
+              </span>
             </div>
           </div>
-          <p className="text-slate-500 text-xs mt-4 text-center">
-            Anthem Henderson | Homes By Dr. Jan Duffy | License S.0197614.LLC | Berkshire Hathaway
-            HomeServices Nevada Properties
-          </p>
-          <p className="text-slate-600 text-xs mt-2 text-center max-w-3xl mx-auto">
-            When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name
-            synonymous with trust, ethical standards, and financial strength.
+          <div className="my-4 h-px w-full bg-border" />
+          <p className="text-center text-xs leading-relaxed text-muted-foreground">
+            Market statistics on this page are aggregate figures and structural community facts
+            believed accurate as of their stated date, but are not guaranteed and should be
+            independently verified. For current, live Anthem Henderson MLS listings, contact Dr.
+            Jan Duffy at (702) 222-1964.
           </p>
         </div>
       </div>
