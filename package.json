@@ -1,5 +1,5 @@
 {
-  "name": "heyberkshire-com",
+  "name": "anthemhenderson-com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,7 +21,7 @@
     "test:watch": "vitest watch",
     "analyze": "ANALYZE=true npm run build",
     "lighthouse": "lhci autorun",
-    "lighthouse:manual": "lighthouse https://heyberkshire.com --view --preset=desktop",
+    "lighthouse:manual": "lighthouse https://anthemhenderson.com --view --preset=desktop",
     "perf": "npm run analyze && npm run lighthouse",
     "vercel:build": "vercel build",
     "vercel:deploy": "vercel deploy --prebuilt",

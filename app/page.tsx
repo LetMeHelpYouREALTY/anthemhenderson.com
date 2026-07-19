@@ -57,8 +57,8 @@ export default async function Home() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
-    url: `https://${config.domain !== "default" ? config.domain : "heyberkshire.com"}`,
+    name: `Anthem Henderson | Homes By Dr. Jan Duffy`,
+    url: `https://${config.domain !== "default" ? config.domain : "anthemhenderson.com"}`,
     telephone: "+17022221964",
     address: {
       "@type": "PostalAddress",
@@ -151,10 +151,10 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Why Work With Dr. Jan Duffy?
+                Anthem Henderson | Homes By Dr. Jan Duffy
               </h2>
               <p className="text-lg text-slate-600">
-                Berkshire Hathaway HomeServices Nevada Properties — the most trusted name in Las Vegas real estate.
+                Local Anthem expertise backed by Berkshire Hathaway HomeServices Nevada Properties.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -176,26 +176,28 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Market Stats */}
+        {/* Anthem Community Snapshot — structural facts, not unverified medians */}
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold mb-3">
-                {config.neighborhood} Real Estate Market
+                {config.neighborhood} at a Glance
               </h2>
-              <p className="text-slate-400">Current data — updated regularly</p>
+              <p className="text-slate-400">
+                Call 702-222-1964 for live Anthem comps by sub-community and floor plan
+              </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
-                { value: "$450K", label: "Median Price", sub: "+4.2% YoY" },
-                { value: "28", label: "Avg Days on Market", sub: "" },
-                { value: "4,850", label: "Active Listings", sub: "" },
-                { value: "2.1", label: "Months Inventory", sub: "" },
+                { value: "4,775", label: "Acres", sub: "Master plan" },
+                { value: "14K+", label: "Homes", sub: "Six sub-communities" },
+                { value: "7K+", label: "Sun City Anthem", sub: "55+ Del Webb" },
+                { value: "Golf", label: "Country Club", sub: "Guard-gated luxury" },
               ].map(({ value, label, sub }) => (
                 <div key={label} className="text-center">
                   <div className="text-4xl font-bold text-blue-400 mb-1">{value}</div>
                   <div className="text-slate-300 text-sm">{label}</div>
-                  {sub && <div className="text-green-400 text-xs mt-1">{sub}</div>}
+                  {sub && <div className="text-slate-400 text-xs mt-1">{sub}</div>}
                 </div>
               ))}
             </div>
@@ -243,7 +245,7 @@ export default async function Home() {
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Dr. Jan Duffy | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada Properties
+              Anthem Henderson | Homes By Dr. Jan Duffy | License S.0197614.LLC | BHHS Nevada Properties
             </p>
           </div>
         </section>

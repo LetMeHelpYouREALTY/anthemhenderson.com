@@ -111,7 +111,7 @@ const localBusinessSchema = {
   description:
     "55+ community specialist helping active adults find their perfect Las Vegas retirement home",
   telephone: "(702) 500-1942",
-  url: "https://heyberkshire.com/55-plus-communities",
+  url: "https://anthemhenderson.com/55-plus-communities",
   areaServed: {
     "@type": "City",
     name: "Las Vegas",

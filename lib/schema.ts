@@ -1,5 +1,5 @@
 /**
- * Schema.org Structured Data Generators for heyberkshire.com
+ * Schema.org Structured Data Generators for anthemhenderson.com
  * Following Google's 2025 Structured Data Guidelines
  *
  * @see https://schema.org
@@ -85,11 +85,11 @@ export function generateRealEstateAgentSchema() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${BASE_URL}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    name: "Anthem Henderson | Homes By Dr. Jan Duffy",
     alternateName: [
-      "HeyBerkshire",
+      "Anthem Henderson | Homes By Dr. Jan Duffy",
+      "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
       "BHHS Nevada Properties",
-      "Berkshire Hathaway HomeServices",
     ],
     url: BASE_URL,
     logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,

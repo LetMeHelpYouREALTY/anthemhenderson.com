@@ -1,27 +1,29 @@
-// Site Configuration - HeyBerkshire.com
-// Berkshire Hathaway HomeServices Nevada Properties
+// Site Configuration - AnthemHenderson.com
+// Brand: Anthem Henderson | Homes By Dr. Jan Duffy
 
 export const siteConfig = {
-  name: "HeyBerkshire",
+  name: "Anthem Henderson | Homes By Dr. Jan Duffy",
   fullName: "Berkshire Hathaway HomeServices Nevada Properties",
-  tagline: "Private Client Real Estate Advisory",
-  /** Full brand line for titles and OG: Berkshire Hathaway HomeServices Nevada Properties | Private Client Real Estate Advisory */
-  brandLine:
-    "Berkshire Hathaway HomeServices Nevada Properties | Private Client Real Estate Advisory",
-  brandName: "Berkshire Hathaway HomeServices",
-  shortName: "BHHS",
-  url: "https://heyberkshire.com",
+  tagline: "Anthem Henderson | Homes By Dr. Jan Duffy",
+  /** Full brand line for titles and OG */
+  brandLine: "Anthem Henderson | Homes By Dr. Jan Duffy",
+  brandName: "Anthem Henderson | Homes By Dr. Jan Duffy",
+  shortName: "Anthem Henderson",
+  url: "https://anthemhenderson.com",
   description:
-    "Expert real estate services in Las Vegas and Henderson, NV. Buy, sell, or invest with Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent.",
+    "Anthem Henderson | Homes By Dr. Jan Duffy — search Sun City Anthem, Solera, Anthem Country Club, and Anthem Highlands. BHHS Nevada Properties.",
 };
 
 export const agentInfo = {
   name: "Dr. Jan Duffy",
   title: "REALTOR®",
   license: "S.0197614.LLC",
-  phone: "(702) 500-1942",
-  phoneFormatted: "(702) 500-1942",
-  phoneTel: "tel:+17025001942",
+  /** Client-facing CTA line */
+  phone: "(702) 222-1964",
+  phoneFormatted: "(702) 222-1964",
+  phoneTel: "tel:+17022221964",
+  /** Professional / FUB line — not for public CTAs */
+  phoneProfessional: "(702) 500-1942",
   email: "homes@heyberkshire.com",
   brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
 };
@@ -39,11 +41,11 @@ export const officeInfo = {
     lat: 36.1893,
     lng: -115.2821,
   },
-  phone: "(702) 500-1942",
-  phoneTel: "tel:+17025001942",
+  phone: "(702) 222-1964",
+  phoneTel: "tel:+17022221964",
 };
 
-// Market Statistics (Updated January 2026)
+// Market Statistics (Updated January 2026) — metro context; call for live Anthem comps
 export const marketStats = {
   lastUpdated: "January 2026",
   lasVegas: {
@@ -94,24 +96,59 @@ export const valuePropositions = {
   trust:
     "Berkshire Hathaway HomeServices is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, ethical standards, and a global referral network of 50,000+ agents.",
   expertise:
-    "Serving Las Vegas since 2008 with $127M+ in closed transactions, Dr. Jan Duffy combines deep local market knowledge with the resources of a global brand.",
+    "Serving Las Vegas since 2008 with $127M+ in closed transactions, Dr. Jan Duffy combines deep local market knowledge with the resources of a global brand — including Anthem Henderson's 55+, golf, and foothill neighborhoods.",
 };
+
+// Anthem Henderson sub-communities (primary focus for this site)
+export const anthemCommunities = [
+  {
+    name: "Sun City Anthem",
+    slug: "sun-city-anthem",
+    description: "Del Webb 55+ active adult community with recreation centers, golf, and resort amenities",
+    highlights: ["55+ active adult", "7,000+ homes", "Multiple rec centers", "Golf & pickleball"],
+  },
+  {
+    name: "Solera at Anthem",
+    slug: "solera-at-anthem",
+    description: "Boutique guard-gated 55+ community with clubhouse, pools, and fitness",
+    highlights: ["55+ guard-gated", "~1,000–1,800 homes", "Clubhouse & pools", "Lower scale than SCA"],
+  },
+  {
+    name: "Anthem Country Club",
+    slug: "anthem-country-club",
+    description: "Guard-gated luxury golf community with custom and semi-custom estates",
+    highlights: ["24/7 guard-gated", "Golf course living", "Custom estates", "Luxury inventory"],
+  },
+  {
+    name: "Anthem Highlands",
+    slug: "anthem-highlands",
+    description: "Established single-family neighborhoods with foothill and valley views",
+    highlights: ["Single-family homes", "Foothill setting", "Trail access", "Henderson location"],
+  },
+];
 
 // Neighborhoods served
 export const neighborhoods = [
   {
-    name: "Summerlin",
-    slug: "summerlin",
-    description: "Master-planned community with parks, trails, and top-rated schools",
-    medianPrice: "$625,000",
-    highlights: ["Red Rock views", "150+ parks", "Top schools", "Golf courses"],
+    name: "Anthem",
+    slug: "anthem",
+    description: "Henderson's largest master-planned community on the McCullough Range foothills",
+    medianPrice: "Call for comps",
+    highlights: ["4,775 acres", "14,000+ homes", "55+ & luxury options", "Sloan Canyon access"],
   },
   {
     name: "Henderson",
     slug: "henderson",
-    description: "Nevada's second-largest city with family-friendly neighborhoods",
+    description: "Nevada's second-largest city with master-planned communities and Lake Las Vegas",
     medianPrice: "$485,000",
-    highlights: ["Low crime rate", "Excellent schools", "Lake Las Vegas", "Green Valley"],
+    highlights: ["Master-planned communities", "Lake Las Vegas", "Green Valley", "Anthem"],
+  },
+  {
+    name: "Summerlin",
+    slug: "summerlin",
+    description: "Master-planned community with parks, trails, and golf",
+    medianPrice: "$625,000",
+    highlights: ["Red Rock views", "150+ parks", "Golf courses", "Village living"],
   },
   {
     name: "Green Valley",
@@ -135,39 +172,18 @@ export const neighborhoods = [
     highlights: ["Golf community", "Guard-gated", "Mountain views", "Luxury amenities"],
   },
   {
-    name: "North Las Vegas",
-    slug: "north-las-vegas",
-    description: "Rapidly growing area with affordable new construction",
-    medianPrice: "$385,000",
-    highlights: ["New construction", "Affordable", "Growing area", "Family-friendly"],
-  },
-  {
-    name: "Skye Canyon",
-    slug: "skye-canyon",
-    description: "Newer master-planned community in northwest Las Vegas",
-    medianPrice: "$550,000",
-    highlights: ["New homes", "Mountain views", "Modern amenities", "Great schools"],
-  },
-  {
-    name: "Centennial Hills",
-    slug: "centennial-hills",
-    description: "Northwest Las Vegas community with mountain proximity",
-    medianPrice: "$495,000",
-    highlights: ["Mountain access", "Parks", "Shopping", "Family-friendly"],
-  },
-  {
     name: "Inspirada",
     slug: "inspirada",
     description: "Henderson master-planned community with resort-style living",
     medianPrice: "$525,000",
-    highlights: ["Resort pools", "Walking trails", "New construction", "Great schools"],
+    highlights: ["Resort pools", "Walking trails", "New construction", "Village amenities"],
   },
   {
-    name: "Mountains Edge",
-    slug: "mountains-edge",
-    description: "Southwest Las Vegas master-planned community",
-    medianPrice: "$475,000",
-    highlights: ["Mountain views", "Parks", "Growing area", "Affordable luxury"],
+    name: "MacDonald Highlands",
+    slug: "macdonald-highlands",
+    description: "Henderson guard-gated luxury community",
+    medianPrice: "Call for comps",
+    highlights: ["Guard-gated", "Luxury estates", "Golf", "Henderson foothills"],
   },
 ];
 
@@ -225,12 +241,12 @@ export const services = [
 
 // Expert quotes from Dr. Jan Duffy
 export const expertQuotes = {
-  market: `"The Las Vegas market remains strong heading into 2026. We're seeing continued demand from California relocators and remote workers, but the days of 20 offers on every listing are behind us. Buyers finally have some negotiating power."`,
+  market: `"Anthem buyers need sub-community clarity first — Sun City Anthem, Solera, Country Club, and Highlands price and live very differently. I pull live comps by floor plan and lot before anyone tours."`,
   buyers: `"My job isn't just to show you houses—it's to make sure you don't overpay, that you understand what you're buying, and that you're protected through every step of the transaction."`,
   sellers: `"Pricing your home correctly from day one is the single most important factor in getting top dollar. Overpriced homes sit, and every day on market costs you money."`,
   luxury: `"Luxury buyers expect discretion, market expertise, and flawless execution. In this price range, one wrong move can cost hundreds of thousands of dollars."`,
   investment: `"Las Vegas rental yields are among the best in the country right now. But you need to know which neighborhoods are appreciating and which have peaked."`,
-  relocation: `"Moving to a new city is stressful enough. I handle everything from neighborhood tours to school research to contractor referrals so you can focus on your new beginning."`,
+  relocation: `"Moving to a new city is stressful enough. I handle everything from neighborhood tours to contractor referrals so you can focus on your new beginning."`,
   newConstruction: `"Builders have sales agents who work for them, not you. Having your own representation costs you nothing but can save you tens of thousands in upgrades and negotiations."`,
   valueProposition: `"When clients ask why they should choose a Berkshire Hathaway HomeServices agent, I tell them: you're not just getting me—you're getting a global network of 50,000 agents, world-class marketing, and a brand that's synonymous with trust."`,
 };
@@ -246,7 +262,7 @@ export const commonFAQs = {
     {
       question: "What areas does Berkshire Hathaway HomeServices Nevada Properties cover?",
       answer:
-        "BHHS Nevada Properties serves all of Las Vegas, Henderson, North Las Vegas, and surrounding areas, with specialized expertise in Summerlin, The Ridges, Skye Canyon, Southern Highlands, Green Valley, and Henderson's master-planned communities.",
+        "BHHS Nevada Properties serves all of Las Vegas, Henderson, North Las Vegas, and surrounding areas, with specialized expertise in Anthem Henderson, Summerlin, The Ridges, Skye Canyon, Southern Highlands, Green Valley, and Henderson's master-planned communities.",
     },
     {
       question: "How do Berkshire Hathaway HomeServices agents get paid?",

@@ -109,6 +109,21 @@ export const FAQ_BY_PAGE_TYPE: Record<string, FAQ[]> = {
 
 export const FAQ_DOMAIN_OVERRIDES: Record<string, FAQ[]> = {
 
+  "anthemhenderson.com": [
+    { question: "What neighborhoods make up Anthem Henderson?",
+      answer: "Anthem is Henderson's largest master plan — about 4,775 acres with 14,000+ homes across Sun City Anthem (55+), Solera at Anthem (55+ guard-gated), Anthem Country Club (guard-gated golf luxury), Anthem Highlands, Anthem Coventry, and Madeira Canyon. Call 702-222-1964 and Dr. Jan will map which sub-community fits your lifestyle and budget." },
+    { question: "What is the difference between Sun City Anthem and Solera at Anthem?",
+      answer: "Both are Del Webb 55+ communities. Sun City Anthem is the large resort-scale option (7,000+ homes, multiple recreation centers, golf, and extensive clubs). Solera is smaller and guard-gated, with a more intimate clubhouse amenity set and typically lower HOA scale. Dr. Jan tours both so you can compare floor plans, views, and monthly costs side by side." },
+    { question: "How much do Anthem Henderson homes cost?",
+      answer: "Prices vary widely by sub-community — from entry-level Sun City Anthem and Solera inventory up through multi-million Anthem Country Club estates. Medians move monthly. Call/text Dr. Jan at 702-222-1964 for a live comp pull by floor plan, lot position, and upgrades." },
+    { question: "Are there HOA fees in Anthem?",
+      answer: "Yes — every Anthem sub-community has HOA dues, and Country Club / Solera also have gate and amenity tiers on top. Dr. Jan will give you the exact monthly amount, what it covers, and any special assessments before you write an offer." },
+    { question: "Can I buy in Anthem Country Club without being a golfer?",
+      answer: "Yes. Many Country Club buyers want the guard-gated setting, views, and privacy more than golf membership. Dr. Jan will walk you through membership options, dues, and which streets and floor plans fit a non-golf lifestyle." },
+    { question: "Who should I call to tour Anthem homes?",
+      answer: "Call or text Dr. Jan Duffy at 702-222-1964. She answers her own phone, pulls live MLS comps for Anthem Henderson, and schedules private showings across Sun City Anthem, Solera, Country Club, and Highlands." },
+  ],
+
   "heritagestoneridgevalue.com": [
     { question: "How do I get an accurate Heritage Stonebridge home valuation?",
       answer: "Dr. Jan pulls live Heritage Stonebridge comps — every sale in the past 6 months, adjusted for upgrades, floor plan, and lot position. She does this free with no obligation. Call 702-222-1964 for your personalized valuation." },

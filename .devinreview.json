@@ -2,7 +2,7 @@
   "$schema": "https://devin.ai/schemas/review-config.json",
   "version": "1.0",
   "project": {
-    "name": "heyberkshire.com",
+    "name": "anthemhenderson.com",
     "type": "nextjs",
     "framework": "next-14",
     "language": "typescript"

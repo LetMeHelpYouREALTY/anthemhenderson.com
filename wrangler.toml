@@ -1,7 +1,7 @@
 # Cloudflare Workers Configuration
 # Learn more: https://developers.cloudflare.com/workers/wrangler/configuration/
 
-name = "heyberkshire-com"
+name = "anthemhenderson-com"
 main = "workers/_worker.ts"
 compatibility_date = "2026-02-13"
 compatibility_flags = ["nodejs_compat"]
@@ -18,29 +18,14 @@ command = "npm run build"
 [vars]
 DEBUG = "false"
 
-# KV Namespaces for caching (optional)
-# [[kv_namespaces]]
-# binding = "CACHE"
-# id = "your-kv-namespace-id"
-
-# Analytics Engine (optional - requires Workers Paid plan)
-# [[analytics_engine_datasets]]
-# binding = "ANALYTICS_DATASET"
-
-# Durable Objects (optional - for advanced caching)
-# [[durable_objects.bindings]]
-# name = "CACHE_OBJECT"
-# class_name = "CacheObject"
-# script_name = "heyberkshire-com"
-
 # Routes - apply workers to specific paths
 [[routes]]
-pattern = "heyberkshire.com/*"
-zone_name = "heyberkshire.com"
+pattern = "anthemhenderson.com/*"
+zone_name = "anthemhenderson.com"
 
 [[routes]]
-pattern = "www.heyberkshire.com/*"
-zone_name = "heyberkshire.com"
+pattern = "www.anthemhenderson.com/*"
+zone_name = "anthemhenderson.com"
 
 # Development settings
 [dev]
@@ -49,19 +34,19 @@ local_protocol = "http"
 
 # Production environment
 [env.production]
-name = "heyberkshire-com-production"
+name = "anthemhenderson-com-production"
 vars = { DEBUG = "false" }
 routes = [
-  { pattern = "heyberkshire.com/*", zone_name = "heyberkshire.com" },
-  { pattern = "www.heyberkshire.com/*", zone_name = "heyberkshire.com" }
+  { pattern = "anthemhenderson.com/*", zone_name = "anthemhenderson.com" },
+  { pattern = "www.anthemhenderson.com/*", zone_name = "anthemhenderson.com" }
 ]
 
 # Staging environment
 [env.staging]
-name = "heyberkshire-com-staging"
+name = "anthemhenderson-com-staging"
 vars = { DEBUG = "true" }
 routes = [
-  { pattern = "staging.heyberkshire.com/*", zone_name = "heyberkshire.com" }
+  { pattern = "staging.anthemhenderson.com/*", zone_name = "anthemhenderson.com" }
 ]
 
 # Observability

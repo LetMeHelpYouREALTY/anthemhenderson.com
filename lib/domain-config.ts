@@ -21,6 +21,7 @@ export interface DomainConfig {
 const REALSCOUT_AGENT_ID = "QWdlbnQtMjI1MDUw";
 
 export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
+  "anthemhenderson.com": { domain: "anthemhenderson.com", neighborhood: "Anthem Henderson", tagline: "Anthem Henderson | Homes By Dr. Jan Duffy", description: "Anthem Henderson | Homes By Dr. Jan Duffy — search Sun City Anthem, Solera, Anthem Country Club, and Anthem Highlands. BHHS Nevada Properties.", heroHeadline: "Anthem Henderson Homes for Sale", heroSubheadline: "Homes By Dr. Jan Duffy — Henderson's 4,775-acre master plan: 55+ active adult, guard-gated golf, and foothill neighborhoods with McCullough Range views.", keywords: ["Anthem Henderson homes for sale", "Homes By Dr. Jan Duffy", "Sun City Anthem", "Solera at Anthem", "Anthem Country Club"], pageType: "community", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Homes By Dr. Jan Duffy", ctaHeadline: "Find Your Anthem Home", ctaSubheadline: "Sun City Anthem, Solera, Country Club, Highlands — call 702-222-1964 for live comps and private showings." },
   "consenzaestates.com": { domain: "consenzaestates.com", neighborhood: "Consenza Estates", tagline: "Luxury Living in Consenza Estates", description: "Find your dream home in Consenza Estates, Las Vegas. Expert guidance from Dr. Jan Duffy.", heroHeadline: "Consenza Estates Homes for Sale", heroSubheadline: "Exclusive properties in one of Las Vegas' most sought-after communities.", keywords: ["Consenza Estates homes", "Las Vegas luxury real estate", "Consenza Estates Las Vegas"], pageType: "luxury", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Consenza Estates Expert", ctaHeadline: "Find Your Consenza Estates Home", ctaSubheadline: "I know every listing in this community. Let me match you with the right home." },
   "aliantehomesforsale.com": { domain: "aliantehomesforsale.com", neighborhood: "Aliante", tagline: "Aliante Homes for Sale", description: "Search Aliante homes for sale in North Las Vegas. Expert real estate guidance from Dr. Jan Duffy.", heroHeadline: "Aliante Homes for Sale", heroSubheadline: "Master-planned living in the heart of North Las Vegas.", keywords: ["Aliante homes for sale", "Aliante North Las Vegas", "Aliante real estate"], pageType: "community", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Aliante Specialist", ctaHeadline: "Search Aliante Homes Today", ctaSubheadline: "Get instant access to all Aliante listings with expert guidance." },
   "californiaforeverbroker.com": { domain: "californiaforeverbroker.com", neighborhood: "Las Vegas", tagline: "Relocating from California to Las Vegas", description: "California to Las Vegas relocation specialist. Find your Nevada dream home with Dr. Jan Duffy.", heroHeadline: "Leaving California for Las Vegas?", heroSubheadline: "No state income tax, lower cost of living, and year-round sunshine. Let me help you make the move.", keywords: ["California to Las Vegas move", "relocation Las Vegas", "Nevada real estate for Californians"], pageType: "lifestyle", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Relocation Expert", ctaHeadline: "Your Nevada Fresh Start Awaits", ctaSubheadline: "I've helped hundreds of California families make the move. Let's talk." },
@@ -85,20 +86,20 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
 
 };
 
-// Default config for any domain not specifically listed
+// Default for this repo: Anthem Henderson (anthemhenderson.com)
 export const DEFAULT_CONFIG: DomainConfig = {
-  domain: "default",
-  neighborhood: "Las Vegas",
-  tagline: "Las Vegas Homes for Sale",
-  description: "Search Las Vegas homes for sale. Expert real estate guidance from Dr. Jan Duffy, BHHS Nevada Properties.",
-  heroHeadline: "Las Vegas Homes for Sale",
-  heroSubheadline: "Expert real estate guidance from Dr. Jan Duffy — 30+ years, 500+ families helped.",
-  keywords: ["Las Vegas homes for sale", "Las Vegas real estate", "Dr Jan Duffy"],
-  pageType: "search",
+  domain: "anthemhenderson.com",
+  neighborhood: "Anthem Henderson",
+  tagline: "Anthem Henderson | Homes By Dr. Jan Duffy",
+  description: "Anthem Henderson | Homes By Dr. Jan Duffy — search Sun City Anthem, Solera, Anthem Country Club, and Anthem Highlands. BHHS Nevada Properties.",
+  heroHeadline: "Anthem Henderson Homes for Sale",
+  heroSubheadline: "Homes By Dr. Jan Duffy — Henderson's 4,775-acre master plan: 55+ active adult, guard-gated golf, and foothill neighborhoods with McCullough Range views.",
+  keywords: ["Anthem Henderson homes for sale", "Homes By Dr. Jan Duffy", "Sun City Anthem", "Solera at Anthem", "Anthem Country Club"],
+  pageType: "community",
   realscoutAgentId: REALSCOUT_AGENT_ID,
-  ctaBadge: "Las Vegas Expert",
-  ctaHeadline: "Find Your Las Vegas Home",
-  ctaSubheadline: "Call or text Dr. Jan at 702-222-1964 — I answer my own phone.",
+  ctaBadge: "Homes By Dr. Jan Duffy",
+  ctaHeadline: "Find Your Anthem Home",
+  ctaSubheadline: "Sun City Anthem, Solera, Country Club, Highlands — call 702-222-1964 for live comps and private showings.",
 };
 
 export function getDomainConfig(hostname: string): DomainConfig {

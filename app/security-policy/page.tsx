@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Security Policy',
-  description: 'Security policy and responsible disclosure information for heyberkshire.com',
+  description: 'Security policy and responsible disclosure information for anthemhenderson.com',
   robots: {
     index: true,
     follow: true,
@@ -220,7 +220,7 @@ export default function SecurityPolicyPage() {
               To protect your information when using our site:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
-              <li>Ensure you're on the correct domain: <strong>heyberkshire.com</strong></li>
+              <li>Ensure you're on the correct domain: <strong>anthemhenderson.com</strong></li>
               <li>Look for the padlock icon (HTTPS)</li>
               <li>Don't share sensitive information via email</li>
               <li>Use strong, unique passwords if creating an account</li>

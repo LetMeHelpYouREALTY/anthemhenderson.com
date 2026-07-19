@@ -100,7 +100,7 @@ export default function ContactPage() {
                       href="mailto:homes@heyberkshire.com"
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
-                      Homes@HeyBerkshire.com
+                      homes@heyberkshire.com
                     </a>
                     <p className="text-sm text-slate-500 mt-1">
                       Typically respond within 2 hours
@@ -278,7 +278,7 @@ export default function ContactPage() {
                 <Mail className="h-8 w-8 mr-4" />
                 <div className="text-left">
                   <div className="font-bold text-lg">Send Email</div>
-                  <div className="text-slate-300">Homes@HeyBerkshire.com</div>
+                  <div className="text-slate-300">homes@heyberkshire.com</div>
                 </div>
               </a>
             </div>
