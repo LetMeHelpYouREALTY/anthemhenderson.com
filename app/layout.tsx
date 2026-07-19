@@ -16,13 +16,21 @@ export async function generateMetadata(): Promise<Metadata> {
       ? pageMeta.title
       : "Homes for Sale in Anthem Henderson, NV";
 
+  // Preserve absolute titles (e.g. homepage) — do not wrap them in the template.
+  const titleIsAbsolute =
+    typeof pageMeta.title === "object" &&
+    pageMeta.title !== null &&
+    "absolute" in pageMeta.title;
+
   return {
     ...pageMeta,
     metadataBase: new URL(siteConfig.url),
-    title: {
-      default: `${pageTitle} | Anthem Henderson | Homes By Dr. Jan Duffy`,
-      template: "%s | Anthem Henderson | Homes By Dr. Jan Duffy",
-    },
+    title: titleIsAbsolute
+      ? pageMeta.title
+      : {
+          default: `${pageTitle} | Anthem Henderson | Homes By Dr. Jan Duffy`,
+          template: "%s | Anthem Henderson | Homes By Dr. Jan Duffy",
+        },
   };
 }
 
