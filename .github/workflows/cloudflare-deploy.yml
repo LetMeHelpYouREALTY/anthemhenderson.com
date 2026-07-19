@@ -55,7 +55,7 @@ jobs:
           NEXT_PUBLIC_REALSCOUT_AGENT_ID: ${{ secrets.NEXT_PUBLIC_REALSCOUT_AGENT_ID }}
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -110,7 +110,7 @@ jobs:
         run: npm ci
 
       - name: Deploy Workers
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
