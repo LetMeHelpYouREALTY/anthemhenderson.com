@@ -1,0 +1,114 @@
+{
+  "$schema": "https://devin.ai/schemas/review-config.json",
+  "version": "1.0",
+  "project": {
+    "name": "heyberkshire.com",
+    "type": "nextjs",
+    "framework": "next-14",
+    "language": "typescript"
+  },
+  "review": {
+    "enabled": true,
+    "autoReview": {
+      "onPRCreated": true,
+      "onPRUpdated": true,
+      "onReviewRequested": true,
+      "skipDrafts": true
+    },
+    "focus": [
+      "security",
+      "performance",
+      "seo",
+      "accessibility",
+      "best-practices"
+    ]
+  },
+  "rules": {
+    "nextjs": {
+      "enabled": true,
+      "checkMetadata": true,
+      "checkImageOptimization": true,
+      "checkAppRouter": true,
+      "checkServerComponents": true
+    },
+    "react": {
+      "enabled": true,
+      "checkHooks": true,
+      "checkMemoization": true,
+      "checkKeyProps": true
+    },
+    "typescript": {
+      "enabled": true,
+      "strictMode": true,
+      "noAny": true
+    },
+    "seo": {
+      "enabled": true,
+      "priority": "high",
+      "checks": [
+        "meta-tags",
+        "structured-data",
+        "json-ld-schema",
+        "heading-hierarchy",
+        "alt-text",
+        "canonical-urls"
+      ]
+    },
+    "custom": [
+      {
+        "name": "realscout-widget",
+        "description": "Check RealScout widget integration",
+        "pattern": "realscout|RealScout",
+        "severity": "warning",
+        "message": "Verify RealScout widget loads correctly and CSP headers allow em.realscout.com and www.realscout.com"
+      },
+      {
+        "name": "phone-number-check",
+        "description": "Verify correct phone number is used",
+        "pattern": "702-222-1964|7022221964|702-500-1955|7025001955",
+        "severity": "error",
+        "message": "Old phone number detected! Use (702) 500-1942 for all phone numbers sitewide"
+      },
+      {
+        "name": "berkshire-branding",
+        "description": "Ensure Berkshire Hathaway branding consistency",
+        "pattern": "page\\.tsx$",
+        "requiresContent": ["Berkshire Hathaway", "BHHS"],
+        "severity": "warning",
+        "message": "Page should include Berkshire Hathaway HomeServices branding"
+      },
+      {
+        "name": "schema-markup",
+        "description": "Check for JSON-LD schema markup",
+        "pattern": "page\\.tsx$",
+        "requiresContent": ["application/ld+json", "schema.org"],
+        "severity": "info",
+        "message": "Consider adding JSON-LD schema markup for better SEO"
+      },
+      {
+        "name": "cloudflare-compatibility",
+        "description": "Check for Cloudflare Workers edge compatibility",
+        "pattern": "\\.(ts|tsx)$",
+        "forbiddenPatterns": [
+          "fs.readFileSync",
+          "require('fs')",
+          "process.cwd()"
+        ],
+        "severity": "warning",
+        "message": "This code may not be compatible with Cloudflare Workers edge runtime"
+      }
+    ]
+  },
+  "ignore": [
+    "node_modules/**",
+    ".next/**",
+    "public/**",
+    "*.config.js",
+    "*.config.ts"
+  ],
+  "notifications": {
+    "slack": false,
+    "email": false,
+    "github": true
+  }
+}
