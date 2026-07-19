@@ -1,0 +1,146 @@
+name: Vercel Preview Deployment
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    name: Deploy to Vercel Preview
+    runs-on: ubuntu-latest
+    outputs:
+      preview-url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to Vercel
+        id: deploy
+        run: |
+          url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$url" >> $GITHUB_OUTPUT
+          echo "Deployed to: $url"
+
+      - name: Comment PR with Preview URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            const botComment = comments.find(comment => 
+              comment.user.type === 'Bot' && 
+              comment.body.includes('Preview Deployment Ready')
+            );
+            
+            const commentBody = `## 🚀 Preview Deployment Ready!
+
+            ✅ **Preview URL:** ${{ steps.deploy.outputs.url }}
+
+            ### Quick Links
+            - 📱 [Mobile Test](https://mobilemoxie.com/tools/mobile-test/?url=${{ steps.deploy.outputs.url }})
+            - 🔍 [Page Speed](https://pagespeed.web.dev/analysis?url=${{ steps.deploy.outputs.url }})
+            - ♿ [Accessibility Check](https://wave.webaim.org/report#/${{ steps.deploy.outputs.url }})
+
+            ---
+            *Deployed with Vercel • Commit: ${context.sha.substring(0, 7)}*`;
+            
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: commentBody
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: commentBody
+              });
+            }
+
+  lighthouse:
+    name: Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    needs: deploy-preview
+    if: needs.deploy-preview.outputs.preview-url != ''
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Wait for deployment
+        run: sleep 30
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            ${{ needs.deploy-preview.outputs.preview-url }}
+            ${{ needs.deploy-preview.outputs.preview-url }}/about
+            ${{ needs.deploy-preview.outputs.preview-url }}/contact
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Comment PR with Lighthouse Results
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const fs = require('fs');
+            const results = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+            
+            const formatScore = (score) => {
+              const percentage = Math.round(score * 100);
+              if (percentage >= 90) return `🟢 ${percentage}`;
+              if (percentage >= 50) return `🟡 ${percentage}`;
+              return `🔴 ${percentage}`;
+            };
+            
+            let comment = `## 📊 Lighthouse Performance Report\n\n`;
+            comment += `| Page | Performance | Accessibility | Best Practices | SEO |\n`;
+            comment += `|------|-------------|---------------|----------------|-----|\n`;
+            
+            for (const result of results) {
+              const url = new URL(result.url);
+              const page = url.pathname === '/' ? 'Home' : url.pathname.split('/').pop();
+              const scores = result.summary;
+              
+              comment += `| ${page} | ${formatScore(scores.performance)} | ${formatScore(scores.accessibility)} | ${formatScore(scores['best-practices'])} | ${formatScore(scores.seo)} |\n`;
+            }
+            
+            comment += `\n---\n*View full report in Actions artifacts*`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: comment
+            });

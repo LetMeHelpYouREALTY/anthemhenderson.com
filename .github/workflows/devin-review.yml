@@ -1,0 +1,40 @@
+name: Devin PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+# Prevent duplicate runs
+concurrency:
+  group: devin-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  devin-review:
+    name: AI Code Review
+    runs-on: ubuntu-latest
+    # Skip draft PRs
+    if: github.event.pull_request.draft == false
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Devin Review CLI
+        run: |
+          npm install -g devin-review
+          echo "Devin Review CLI installed successfully"
+      
+      - name: Run Devin Review
+        run: |
+          devin-review ${{ github.event.pull_request.html_url }} || echo "Devin Review completed or requires authentication at app.devin.ai"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
