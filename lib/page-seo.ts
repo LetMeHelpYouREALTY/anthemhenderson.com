@@ -498,9 +498,13 @@ export function getPageSeo(pathname: string): PageSeoEntry {
 export function createPageMetadata(pathname: string): Metadata {
   const seo = getPageSeo(pathname);
   const canonical = `${BASE_URL}${seo.path === "/" ? "" : seo.path}`;
-  // Short title — root layout template appends "| Anthem Henderson | Homes By Dr. Jan Duffy"
-  const title = seo.title;
+  // Homepage uses absolute title (avoids Next template edge cases on `/`).
+  // Other routes use a short title; layout template appends the brand.
   const ogTitle = `${seo.title} | ${BRAND}`;
+  const title =
+    seo.path === "/"
+      ? { absolute: ogTitle }
+      : seo.title;
 
   return {
     title,
