@@ -1,0 +1,23 @@
+# CODEOWNERS - Automatic reviewer assignment
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything
+* @DrJanDuffy
+
+# App pages and routes
+/app/ @DrJanDuffy
+
+# Components
+/components/ @DrJanDuffy
+
+# Configuration files
+*.config.* @DrJanDuffy
+package.json @DrJanDuffy
+tsconfig.json @DrJanDuffy
+
+# CI/CD workflows
+/.github/ @DrJanDuffy
+
+# API routes
+/app/api/ @DrJanDuffy
+/api/ @DrJanDuffy
