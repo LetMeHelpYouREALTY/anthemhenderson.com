@@ -1,0 +1,55 @@
+# humanstxt.org
+
+/* TEAM */
+Agent: Dr. Jan Duffy
+License: S.0197614.LLC
+Site: https://heyberkshire.com
+Location: Las Vegas, Nevada, USA
+Phone: (702) 500-1942
+
+Brokerage: Berkshire Hathaway HomeServices Nevada Properties
+Site: https://www.bhhs.com
+
+/* THANKS */
+Framework: Next.js 14
+Deployment: Vercel
+CDN: Cloudflare
+Analytics: Vercel Analytics, Google Analytics
+Monitoring: Sentry
+Security: Cloudflare Turnstile, Upstash Rate Limiting
+Testing: Vitest
+Fonts: Geist Sans
+
+/* SITE */
+Last update: 2026-02-14
+Language: English
+Doctype: HTML5
+Standards: W3C, WCAG 2.1, Fair Housing Act
+Components: React, TypeScript, Tailwind CSS
+IDE: Cursor / VS Code
+
+/* INTEGRATIONS */
+CRM: Follow Up Boss
+IDX/MLS: RealScout
+Scheduling: Calendly
+AI: Claude 3.5 Sonnet (Anthropic)
+
+/* PERFORMANCE */
+Lighthouse Score: 95+
+Core Web Vitals: Optimized
+Image Formats: AVIF, WebP
+Cache Strategy: Edge caching + ISR
+Security Headers: CSP, HSTS, X-Frame-Options
+
+/* SECURITY */
+HTTPS: Enforced
+CAPTCHA: Cloudflare Turnstile
+Rate Limiting: Upstash Redis
+Error Tracking: Sentry
+Vulnerability Scanning: GitHub Actions + Snyk
+
+/* LEGAL */
+Equal Housing Opportunity
+Fair Housing Compliant
+GDPR Ready
+CCPA Compliant

@@ -1,0 +1,108 @@
+---
+description: Modern deployment and infrastructure standards for February 2026
+globs: .github/workflows/*.yml,wrangler.toml,vercel.json,next.config.js
+alwaysApply: false
+---
+
+# 2026 Deployment Standards
+
+## GitHub Actions Best Practices
+
+```yaml
+# ✅ GOOD: Cache dependencies
+- name: Cache dependencies
+  uses: actions/cache@v4
+  with:
+    path: ~/.npm
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+# ✅ GOOD: Parallel jobs
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
+    needs: [lint, test] # Dependencies only when needed
+
+# ❌ BAD: Sequential when parallel is possible
+```
+
+## Lighthouse CI
+
+```json
+// .lighthouserc.json - Enforce 2026 standards
+{
+  "ci": {
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", { "minScore": 0.9 }],
+        "categories:accessibility": ["error", { "minScore": 0.95 }],
+        "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }]
+      }
+    }
+  }
+}
+```
+
+## Cloudflare Workers
+
+```typescript
+// ✅ GOOD: Edge caching with custom rules
+async fetch(request: Request): Promise<Response> {
+  const cache = caches.default;
+  const cached = await cache.match(request);
+  if (cached) return cached;
+  
+  const response = await fetch(request);
+  
+  if (shouldCache(request)) {
+    await cache.put(request, response.clone());
+  }
+  
+  return response;
+}
+
+// ❌ BAD: No edge caching (slower, more expensive)
+```
+
+## Environment Variables
+
+```bash
+# ✅ GOOD: Organized by service
+ANTHROPIC_API_KEY=sk-ant-...
+FUB_API_KEY=...
+CLOUDFLARE_API_TOKEN=...
+
+# ❌ BAD: Secrets in code
+const apiKey = "sk-ant-hardcoded"; // NEVER!
+```
+
+## Bundle Optimization
+
+```javascript
+// next.config.js
+webpack: (config, { isServer }) => {
+  if (process.env.ANALYZE === 'true') {
+    const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+    config.plugins.push(new BundleAnalyzerPlugin());
+  }
+  return config;
+}
+
+// Run: ANALYZE=true npm run build
+```
+
+## Multi-Platform Deployment
+
+```javascript
+// ✅ GOOD: Separate configs for each platform
+next.config.js         // Vercel
+next.config.cloudflare.js  // Cloudflare
+wrangler.toml          // Cloudflare Workers
+vercel.json            // Vercel-specific
+
+// ❌ BAD: One config trying to do everything
+```
