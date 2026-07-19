@@ -1,22 +1,11 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Shield, Users, Globe, Award, TrendingUp, CheckCircle, Phone } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Why Choose Berkshire Hathaway HomeServices | Las Vegas Real Estate",
-  description:
-    "Discover why Berkshire Hathaway HomeServices is the most trusted name in real estate. Backed by Warren Buffett, with 50,000+ agents worldwide. Work with BHHS Nevada Properties today.",
-  keywords: [
-    "Berkshire Hathaway HomeServices",
-    "why choose BHHS",
-    "Warren Buffett real estate",
-    "trusted real estate brand",
-    "BHHS Nevada Properties",
-  ],
-};
+export const metadata = createPageMetadata("/why-berkshire-hathaway");
 
 // Organization Schema
 const organizationSchema = {

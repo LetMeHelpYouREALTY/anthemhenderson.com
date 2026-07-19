@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -17,22 +18,8 @@ import {
   FileText,
   HelpCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices New Construction Las Vegas | Buyer's Guide",
-  description:
-    "Free buyer representation on new construction homes in Las Vegas. Dr. Jan Duffy helps you navigate builder contracts, negotiate upgrades, and secure incentives. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices new construction Las Vegas",
-    "new homes Las Vegas",
-    "new construction Henderson",
-    "Las Vegas builders",
-    "Toll Brothers Las Vegas",
-    "Lennar Las Vegas",
-    "KB Home Las Vegas",
-  ],
-};
+export const metadata = createPageMetadata("/new-construction");
 
 const faqSchema = {
   "@context": "https://schema.org",

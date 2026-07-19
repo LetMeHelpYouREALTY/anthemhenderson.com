@@ -1,22 +1,11 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Shield, Mountain, Star, MapPin } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Southern Highlands | Las Vegas Golf Community",
-  description:
-    "Find Southern Highlands homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this premier golf community. Median price $750K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Southern Highlands",
-    "Southern Highlands homes for sale",
-    "Southern Highlands golf",
-    "Las Vegas golf community",
-    "guard gated Las Vegas",
-  ],
-};
+export const metadata = createPageMetadata("/neighborhoods/southern-highlands");
 
 const faqSchema = {
   "@context": "https://schema.org",

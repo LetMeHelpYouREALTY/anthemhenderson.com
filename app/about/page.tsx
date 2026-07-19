@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -16,21 +17,8 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "About Dr. Jan Duffy | Berkshire Hathaway HomeServices Las Vegas",
-  description:
-    "Meet Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent. Serving Las Vegas since 2008, $127M+ in transactions, Henderson & Summerlin specialist. Call (702) 500-1942.",
-  keywords: [
-    "Dr. Jan Duffy",
-    "Berkshire Hathaway HomeServices agent",
-    "Las Vegas realtor",
-    "BHHS Nevada Properties",
-    "Henderson real estate agent",
-    "Summerlin realtor",
-  ],
-};
+export const metadata = createPageMetadata("/about");
 
 // Person Schema for Dr. Jan Duffy
 const personSchema = {

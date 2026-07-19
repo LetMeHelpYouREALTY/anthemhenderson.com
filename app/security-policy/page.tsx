@@ -1,13 +1,6 @@
-import type { Metadata } from 'next'
+import { createPageMetadata } from "@/lib/page-seo";
 
-export const metadata: Metadata = {
-  title: 'Security Policy',
-  description: 'Security policy and responsible disclosure information for anthemhenderson.com',
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
+export const metadata = createPageMetadata("/security-policy");
 
 export default function SecurityPolicyPage() {
   return (

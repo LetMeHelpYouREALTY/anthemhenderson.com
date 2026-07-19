@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -22,32 +23,8 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title:
-    "55+ Active Adult Communities Las Vegas | Sun City, Del Webb, Heritage | Dr. Jan Duffy",
-  description:
-    "Find your perfect 55+ community in Las Vegas. Sun City Summerlin, Sun City Aliante, Del Webb Lake Las Vegas, Heritage at Stonebridge, Solera, Trilogy. Dr. Jan Duffy specializes in active adult living. Call (702) 500-1942.",
-  keywords: [
-    "55+ communities Las Vegas",
-    "active adult communities Las Vegas",
-    "Sun City Summerlin",
-    "Sun City Aliante",
-    "Del Webb Lake Las Vegas",
-    "Heritage at Stonebridge",
-    "Solera at Anthem",
-    "Trilogy Summerlin",
-    "retirement communities Nevada",
-    "55 plus homes Las Vegas",
-  ],
-  openGraph: {
-    title: "Find Your Perfect 55+ Community in Las Vegas | Dr. Jan Duffy",
-    description:
-      "Sun City, Del Webb, Heritage at Stonebridge & more—Dr. Duffy specializes in active adult living. Berkshire Hathaway HomeServices Nevada Properties.",
-    type: "website",
-  },
-};
+export const metadata = createPageMetadata("/55-plus-communities");
 
 const faqSchema = {
   "@context": "https://schema.org",

@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -18,22 +19,8 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Home Buying Guide Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Looking to buy a home in Las Vegas? Dr. Jan Duffy with Berkshire Hathaway HomeServices Nevada Properties guides you through every step. Free buyer consultation. Call (702) 500-1942.",
-  keywords: [
-    "buy home Las Vegas",
-    "Las Vegas home buyer",
-    "Berkshire Hathaway buyer agent",
-    "Henderson homes for sale",
-    "first time home buyer Las Vegas",
-    "California relocation Las Vegas",
-    "55+ communities Las Vegas",
-  ],
-};
+export const metadata = createPageMetadata("/buyers");
 
 const buyerSchema = {
   "@context": "https://schema.org",

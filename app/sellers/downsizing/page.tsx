@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -13,20 +14,8 @@ import {
   Shield,
   Sun,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Downsizing in Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Ready to simplify? Dr. Jan Duffy helps Las Vegas homeowners extract equity and transition to low-maintenance living. 55+ communities, condos, and more. Call (702) 500-1942.",
-  keywords: [
-    "downsizing Las Vegas",
-    "sell large home Las Vegas",
-    "55 plus communities Las Vegas",
-    "empty nester Las Vegas",
-    "Berkshire Hathaway HomeServices downsizing",
-  ],
-};
+export const metadata = createPageMetadata("/sellers/downsizing");
 
 export default function DownsizingPage() {
   return (

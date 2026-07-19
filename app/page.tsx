@@ -12,7 +12,10 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import AnthemFaqAccordion from "@/components/sections/AnthemFaqAccordion";
 import { getFaqsForDomain } from "@/lib/faq-config";
-import { officeInfo, agentInfo } from "@/lib/site-config";
+import { createPageMetadata } from "@/lib/page-seo";
+import { officeInfo } from "@/lib/site-config";
+
+export const metadata = createPageMetadata("/");
 
 const REALSCOUT_AGENT_ID = "QWdlbnQtMjI1MDUw";
 
@@ -69,97 +72,8 @@ const services = [
 export default function Home() {
   const faqs = getFaqsForDomain("community", "anthemhenderson.com");
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: "Anthem Henderson | Homes By Dr. Jan Duffy",
-    jobTitle: "REALTOR® | BHHS Nevada Properties",
-    telephone: "(702) 222-1964",
-    url: "https://anthemhenderson.com",
-    image: "https://anthemhenderson.com/realty/dr-jan-duffy.jpg",
-    areaServed: {
-      "@type": "Place",
-      name: "Anthem, Henderson, NV",
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: officeInfo.address.street,
-      addressLocality: officeInfo.address.city,
-      addressRegion: officeInfo.address.state,
-      postalCode: officeInfo.address.zip,
-      addressCountry: "US",
-    },
-    worksFor: {
-      "@type": "RealEstateAgent",
-      name: "Berkshire Hathaway HomeServices Nevada Properties",
-    },
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "@id": "https://anthemhenderson.com/#localbusiness",
-    name: "Anthem Henderson | Homes By Dr. Jan Duffy",
-    telephone: "+17022221964",
-    email: agentInfo.email,
-    url: "https://anthemhenderson.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: officeInfo.address.street,
-      addressLocality: officeInfo.address.city,
-      addressRegion: officeInfo.address.state,
-      postalCode: officeInfo.address.zip,
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: officeInfo.coordinates.lat,
-      longitude: officeInfo.coordinates.lng,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "10:00",
-        closes: "16:00",
-      },
-    ],
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-
       <div className="flex min-h-dvh flex-col">
         <Navbar />
         <main className="flex-1">
@@ -191,7 +105,10 @@ export default function Home() {
               <h1 className="motion-fade-up motion-delay-1 max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
                 Homes for Sale in Anthem Henderson, NV
               </h1>
-              <p className="motion-fade-up motion-delay-2 mt-4 max-w-2xl text-pretty text-base leading-relaxed text-white/85 sm:text-lg">
+              <p
+                data-speakable
+                className="motion-fade-up motion-delay-2 mt-4 max-w-2xl text-pretty text-base leading-relaxed text-white/85 sm:text-lg"
+              >
                 A local, licensed guide to buying and selling inside Anthem — Sun City Anthem,
                 Solera, Country Club, Highlands, and every street in between.
               </p>

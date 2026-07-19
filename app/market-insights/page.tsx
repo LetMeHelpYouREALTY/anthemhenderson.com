@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -14,21 +15,8 @@ import {
   DollarSign,
   CheckCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Las Vegas Real Estate Market Insights 2026 | Berkshire Hathaway HomeServices",
-  description:
-    "Technology trends, economic forecasts, and market analysis shaping Las Vegas real estate in 2026. AI, data centers, California migration, and what it means for buyers and sellers. Call (702) 500-1942.",
-  keywords: [
-    "Las Vegas real estate trends 2026",
-    "Las Vegas market forecast",
-    "Nevada economic outlook",
-    "California to Las Vegas migration",
-    "Las Vegas tech hub",
-    "Berkshire Hathaway market insights",
-  ],
-};
+export const metadata = createPageMetadata("/market-insights");
 
 const reportSchema = {
   "@context": "https://schema.org",

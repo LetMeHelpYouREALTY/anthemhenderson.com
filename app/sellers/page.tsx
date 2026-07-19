@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -17,22 +18,8 @@ import {
   ArrowRight,
   Award,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Sell Your Las Vegas Home | Berkshire Hathaway HomeServices",
-  description:
-    "Sell your Las Vegas or Henderson home for top dollar with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Free home valuation. World-class marketing. Call (702) 500-1942.",
-  keywords: [
-    "sell home Las Vegas",
-    "Las Vegas listing agent",
-    "Berkshire Hathaway sell house",
-    "Henderson home selling",
-    "what is my home worth Las Vegas",
-    "Las Vegas real estate agent",
-    "Summerlin home selling",
-  ],
-};
+export const metadata = createPageMetadata("/sellers");
 
 const sellerSchema = {
   "@context": "https://schema.org",

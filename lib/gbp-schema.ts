@@ -12,8 +12,8 @@ export const businessInfo = {
     addressCountry: "US",
   },
   phone: {
-    display: "(702) 500-1942",
-    tel: "+17025001942",
+    display: "(702) 222-1964",
+    tel: "+17022221964",
   },
   email: "homes@heyberkshire.com",
   url: "https://anthemhenderson.com",
@@ -33,21 +33,20 @@ export const businessInfo = {
     sunday: "By Appointment",
   },
 
-  // Geo coordinates for distance ranking
+  // Geo coordinates — aligned with officeInfo in site-config
   geo: {
-    latitude: 36.1941,
-    longitude: -115.2678,
+    latitude: 36.1893,
+    longitude: -115.2821,
   },
 
-  // Service areas - Start focused, expand with prominence
+  // Service areas — Anthem-first GEO
   serviceAreas: [
-    // Primary (immediate city)
-    "Las Vegas, NV",
-    "Summerlin, NV",
-    // Secondary (close ZIPs)
+    "Anthem, Henderson, NV",
+    "Sun City Anthem, NV",
+    "Solera at Anthem, NV",
+    "Anthem Country Club, NV",
     "Henderson, NV",
-    "North Las Vegas, NV",
-    // Tertiary (county expansion)
+    "Las Vegas, NV",
     "Clark County, NV",
   ],
 

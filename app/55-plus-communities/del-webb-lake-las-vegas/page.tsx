@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -11,20 +12,8 @@ import {
   Dumbbell,
   CheckCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Del Webb at Lake Las Vegas Homes | Berkshire Hathaway HomeServices",
-  description:
-    "Lakefront 55+ living at Del Webb Lake Las Vegas. Homes from $400K-$900K. Resort amenities, stunning lake and mountain views. Dr. Jan Duffy. Call (702) 500-1942.",
-  keywords: [
-    "Del Webb Lake Las Vegas",
-    "Lake Las Vegas 55 plus",
-    "Del Webb homes Henderson",
-    "lakefront retirement community",
-    "Berkshire Hathaway Del Webb",
-  ],
-};
+export const metadata = createPageMetadata("/55-plus-communities/del-webb-lake-las-vegas");
 
 export default function DelWebbLakeLasVegasPage() {
   return (

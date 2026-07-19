@@ -1,22 +1,11 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Las Vegas Neighborhoods | Berkshire Hathaway HomeServices",
-  description:
-    "Explore Las Vegas and Henderson neighborhoods with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Summerlin, Henderson, The Ridges, Southern Highlands & more.",
-  keywords: [
-    "Las Vegas neighborhoods",
-    "Henderson communities",
-    "Summerlin real estate",
-    "best neighborhoods Las Vegas",
-    "where to live Las Vegas",
-  ],
-};
+export const metadata = createPageMetadata("/neighborhoods");
 
 const neighborhoods = [
   {

@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -17,23 +18,8 @@ import {
   Camera,
   Users,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Las Vegas Luxury Homes for Sale | Berkshire Hathaway HomeServices",
-  description:
-    "Discover Las Vegas luxury real estate with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. The Ridges, MacDonald Highlands, Summerlin, Southern Highlands. $1M+ homes. Call (702) 500-1942.",
-  keywords: [
-    "Las Vegas luxury homes",
-    "The Ridges Las Vegas",
-    "Summerlin luxury real estate",
-    "Southern Highlands homes",
-    "Berkshire Hathaway luxury",
-    "million dollar homes Las Vegas",
-    "MacDonald Highlands Henderson",
-    "luxury real estate agent Las Vegas",
-  ],
-};
+export const metadata = createPageMetadata("/luxury-homes");
 
 const luxurySchema = {
   "@context": "https://schema.org",

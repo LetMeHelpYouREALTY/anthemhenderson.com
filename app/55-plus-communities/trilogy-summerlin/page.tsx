@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -14,27 +15,8 @@ import {
   Home as HomeIcon,
   Heart,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Trilogy at Summerlin Homes for Sale | Luxury Resort 55+ Living | Dr. Jan Duffy",
-  description:
-    "Trilogy at Summerlin - luxury resort-style 55+ community. Homes from $500K-$1.1M. On-site farm-to-table restaurant, spa, contemporary designs. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
-  keywords: [
-    "Trilogy at Summerlin homes for sale",
-    "Trilogy Summerlin Las Vegas",
-    "luxury 55+ community Las Vegas",
-    "resort style 55+ Las Vegas",
-    "Shea Homes Trilogy",
-    "Berkshire Hathaway Trilogy Summerlin",
-  ],
-  openGraph: {
-    title: "Trilogy at Summerlin - Luxury Resort 55+ Living",
-    description:
-      "Where resort living meets 55+ community. Farm-to-table dining, spa, contemporary homes. From $500K. Dr. Jan Duffy, BHHS.",
-    type: "website",
-  },
-};
+export const metadata = createPageMetadata("/55-plus-communities/trilogy-summerlin");
 
 const communitySchema = {
   "@context": "https://schema.org",

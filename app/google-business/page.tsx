@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
@@ -17,7 +18,6 @@ import {
   Building,
   Heart,
 } from "lucide-react";
-import type { Metadata } from "next";
 import {
   businessInfo,
   gbpDescription,
@@ -26,26 +26,7 @@ import {
   generateFAQSchema,
 } from "@/lib/gbp-schema";
 
-export const metadata: Metadata = {
-  title: "Dr. Jan Duffy, REALTOR® Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 500-1942.",
-  keywords: [
-    "Dr. Jan Duffy realtor",
-    "Las Vegas real estate agent",
-    "Berkshire Hathaway HomeServices Las Vegas",
-    "Summerlin realtor",
-    "Henderson real estate agent",
-    "55+ communities Las Vegas",
-    "California relocation Las Vegas",
-  ],
-  openGraph: {
-    title: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    description: "Trusted Las Vegas REALTOR® serving since 2008. Summerlin, Henderson, luxury homes, 55+ communities.",
-    url: "https://anthemhenderson.com/google-business",
-    type: "profile",
-  },
-};
+export const metadata = createPageMetadata("/google-business");
 
 export default function GoogleBusinessPage() {
   const localBusinessSchema = generateLocalBusinessSchema();

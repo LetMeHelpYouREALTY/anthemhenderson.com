@@ -1,22 +1,11 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Shield, Users, GraduationCap, TreePine } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Henderson | Nevada Real Estate",
-  description:
-    "Find Henderson homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's family-friendly communities. Median price $485K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Henderson",
-    "Henderson homes for sale",
-    "Henderson real estate agent",
-    "Henderson Nevada",
-    "Green Valley Henderson",
-  ],
-};
+export const metadata = createPageMetadata("/neighborhoods/henderson");
 
 const neighborhoodSchema = {
   "@context": "https://schema.org",

@@ -1,22 +1,11 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, DollarSign, TrendingUp, Home as HomeIcon, Users } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices North Las Vegas | Affordable Homes",
-  description:
-    "Find affordable North Las Vegas homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy helps first-time buyers and investors. Median price $385K. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices North Las Vegas",
-    "North Las Vegas homes for sale",
-    "affordable homes Las Vegas",
-    "first time home buyer Las Vegas",
-    "new construction North Las Vegas",
-  ],
-};
+export const metadata = createPageMetadata("/neighborhoods/north-las-vegas");
 
 const faqSchema = {
   "@context": "https://schema.org",

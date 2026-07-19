@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -16,21 +17,8 @@ import {
   Shield,
   HelpCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "First-Time Home Buyers Las Vegas | Berkshire Hathaway HomeServices",
-  description:
-    "First-time buyer in Las Vegas? Down payment assistance, builder incentives, and expert guidance from Dr. Jan Duffy at Berkshire Hathaway HomeServices. Call (702) 500-1942.",
-  keywords: [
-    "first time home buyer Las Vegas",
-    "first time buyer Nevada",
-    "down payment assistance Las Vegas",
-    "FHA loans Las Vegas",
-    "VA loans Las Vegas",
-    "Berkshire Hathaway HomeServices first time buyer",
-  ],
-};
+export const metadata = createPageMetadata("/buyers/first-time-buyers");
 
 const faqSchema = {
   "@context": "https://schema.org",

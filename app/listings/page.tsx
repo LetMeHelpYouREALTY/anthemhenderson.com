@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
@@ -17,21 +18,8 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Las Vegas Homes for Sale | MLS Property Search | Berkshire Hathaway HomeServices",
-  description:
-    "Browse all Las Vegas and Henderson homes for sale with live MLS listings. Search by neighborhood, price, and features. Dr. Jan Duffy, Berkshire Hathaway HomeServices. Call (702) 500-1942.",
-  keywords: [
-    "Las Vegas homes for sale",
-    "Henderson real estate",
-    "MLS listings Las Vegas",
-    "Summerlin homes",
-    "houses for sale Las Vegas",
-    "Berkshire Hathaway listings",
-  ],
-};
+export const metadata = createPageMetadata("/listings");
 
 const listingsSchema = {
   "@context": "https://schema.org",

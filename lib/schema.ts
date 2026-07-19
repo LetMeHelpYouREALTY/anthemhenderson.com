@@ -63,13 +63,11 @@ export interface SeniorCommunityData {
 
 const BASE_URL = siteConfig.url;
 
-// Social media profiles (to be updated with actual URLs)
 export const socialProfiles = {
-  facebook: "https://www.facebook.com/heyberkshire",
-  instagram: "https://www.instagram.com/heyberkshire",
+  facebook: "https://www.facebook.com/drjanduffy",
+  instagram: "https://www.instagram.com/drjanduffy",
   linkedin: "https://www.linkedin.com/in/drjanduffy",
-  tiktok: "https://www.tiktok.com/@heyberkshire",
-  youtube: "https://www.youtube.com/@heyberkshire",
+  youtube: "https://www.youtube.com/@drjanduffy",
 };
 
 // ============================================================================
@@ -92,12 +90,12 @@ export function generateRealEstateAgentSchema() {
       "BHHS Nevada Properties",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,
-    image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
+    logo: `${BASE_URL}/realty/dr-jan-duffy.jpg`,
+    image: `${BASE_URL}/realty/dr-jan-duffy.jpg`,
     description: siteConfig.description,
-    telephone: "+1-702-500-1942",
+    telephone: "+17022221964",
     email: agentInfo.email,
-    priceRange: "$385K - $10M+",
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: officeInfo.address.street,
@@ -112,35 +110,36 @@ export function generateRealEstateAgentSchema() {
       longitude: officeInfo.coordinates.lng,
     },
     areaServed: [
-      {
-        "@type": "City",
-        name: "Las Vegas",
-        sameAs: "https://en.wikipedia.org/wiki/Las_Vegas",
-      },
+      { "@type": "Place", name: "Anthem, Henderson, NV" },
+      { "@type": "Place", name: "Sun City Anthem" },
+      { "@type": "Place", name: "Solera at Anthem" },
+      { "@type": "Place", name: "Anthem Country Club" },
+      { "@type": "Place", name: "Anthem Highlands" },
       {
         "@type": "City",
         name: "Henderson",
         sameAs: "https://en.wikipedia.org/wiki/Henderson,_Nevada",
       },
       {
-        "@type": "Place",
-        name: "Summerlin",
-      },
-      {
         "@type": "City",
-        name: "North Las Vegas",
+        name: "Las Vegas",
+        sameAs: "https://en.wikipedia.org/wiki/Las_Vegas",
       },
-      {
-        "@type": "Place",
-        name: "Green Valley",
-      },
+      { "@type": "Place", name: "Summerlin" },
+      { "@type": "AdministrativeArea", name: "Clark County, NV" },
     ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "08:00",
-        closes: "20:00",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "10:00",
+        closes: "16:00",
       },
     ],
     hasCredential: {
@@ -177,17 +176,18 @@ export function generateRealEstateAgentSchema() {
       worstRating: "1",
     },
     knowsAbout: [
-      "Las Vegas real estate",
-      "Henderson homes",
-      "Summerlin properties",
-      "Luxury homes",
-      "New construction",
-      "Investment properties",
-      "Relocation services",
+      "Anthem Henderson real estate",
+      "Sun City Anthem homes",
+      "Solera at Anthem",
+      "Anthem Country Club",
+      "Anthem Highlands",
+      "Henderson NV homes",
       "55+ communities",
-      "First-time homebuyers",
+      "Luxury golf communities",
+      "Home buying and selling",
+      "California relocation to Henderson",
     ],
-    slogan: "Your Berkshire Hathaway HomeServices expert in Las Vegas",
+    slogan: "Anthem Henderson | Homes By Dr. Jan Duffy",
   };
 }
 
@@ -532,20 +532,33 @@ export function generateWebPageSchema(page: {
   url: string;
   datePublished?: string;
   dateModified?: string;
+  speakable?: boolean;
 }) {
+  const absoluteUrl = page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`;
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`}#webpage`,
+    "@id": `${absoluteUrl}#webpage`,
     name: page.name,
     description: page.description,
-    url: page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`,
+    url: absoluteUrl,
+    inLanguage: "en-US",
     isPartOf: {
       "@id": `${BASE_URL}#website`,
     },
     about: {
       "@id": `${BASE_URL}#organization`,
     },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${BASE_URL}/realty/heroes/hero-homes-for-sale.png`,
+    },
+    ...(page.speakable !== false && {
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", "h2", "[data-speakable]"],
+      },
+    }),
     ...(page.datePublished && { datePublished: page.datePublished }),
     ...(page.dateModified && { dateModified: page.dateModified }),
   };

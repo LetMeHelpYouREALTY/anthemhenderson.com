@@ -1,23 +1,11 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, TrendingUp, DollarSign, Building, BarChart, CheckCircle, Calculator } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Las Vegas Investment Properties | Berkshire Hathaway HomeServices",
-  description:
-    "Invest in Las Vegas real estate with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Rental properties, ROI analysis, 1031 exchanges. No state income tax. Call (702) 500-1942.",
-  keywords: [
-    "Las Vegas investment property",
-    "Las Vegas rental property",
-    "Henderson real estate investing",
-    "Nevada investment homes",
-    "1031 exchange Las Vegas",
-    "cash flow properties Las Vegas",
-  ],
-};
+export const metadata = createPageMetadata("/investment-properties");
 
 const investmentAreas = [
   {

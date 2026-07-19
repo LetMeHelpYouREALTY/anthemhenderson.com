@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -14,20 +15,8 @@ import {
   Mountain,
   CheckCircle,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Sun City Summerlin Homes for Sale | Berkshire Hathaway HomeServices",
-  description:
-    "Nevada's largest 55+ community. Sun City Summerlin homes from $320K-$850K. 3 golf courses, 4 rec centers, 100+ clubs. Dr. Jan Duffy, BHHS specialist. Call (702) 500-1942.",
-  keywords: [
-    "Sun City Summerlin homes for sale",
-    "Sun City Summerlin Las Vegas",
-    "55 plus communities Summerlin",
-    "retirement community Las Vegas",
-    "Berkshire Hathaway Sun City",
-  ],
-};
+export const metadata = createPageMetadata("/55-plus-communities/sun-city-summerlin");
 
 const communitySchema = {
   "@context": "https://schema.org",

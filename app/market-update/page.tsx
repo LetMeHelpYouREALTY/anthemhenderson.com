@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
@@ -13,20 +14,8 @@ import {
   BarChart3,
   ArrowRight,
 } from "lucide-react";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Las Vegas Market Update | January 2026",
-  description:
-    "Weekly Las Vegas real estate market update from Berkshire Hathaway HomeServices Nevada Properties. Get the latest stats, notable sales, and expert analysis from Dr. Jan Duffy. Call (702) 500-1942.",
-  keywords: [
-    "Berkshire Hathaway HomeServices Las Vegas market update",
-    "Las Vegas real estate market",
-    "Las Vegas housing market 2026",
-    "Henderson real estate market",
-    "Las Vegas home prices",
-  ],
-};
+export const metadata = createPageMetadata("/market-update");
 
 const articleSchema = {
   "@context": "https://schema.org",
