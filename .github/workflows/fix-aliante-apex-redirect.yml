@@ -1,0 +1,18 @@
+name: Fix Aliante Apex Redirect (308)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix-redirect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set apex→www redirect to 308 Permanent
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: team_EIbjFXaDDtGMTweb5Hvo3CG3
+          VERCEL_PROJECT_ID_ALIANTE: prj_0RZw34lbC34PRwztLG5bqduiRxwY
+        run: bash scripts/fix-aliante-apex-redirect.sh
