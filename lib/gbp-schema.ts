@@ -1,6 +1,8 @@
 // Google Business Profile Schema Data
 // Supports GBP ranking factors: Relevance, Distance, Prominence
 
+import { siteConfig } from "@/lib/site-config";
+
 export const businessInfo = {
   // NAP - Must match GBP exactly
   name: "Anthem Henderson | Homes By Dr. Jan Duffy",
@@ -16,7 +18,7 @@ export const businessInfo = {
     tel: "+17022221964",
   },
   email: "homes@heyberkshire.com",
-  url: "https://anthemhenderson.com",
+  url: siteConfig.url,
 
   // Business Details
   license: "S.0197614.LLC",
@@ -212,9 +214,9 @@ export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": "https://anthemhenderson.com/#organization",
+    "@id": `${siteConfig.url}/#organization`,
     name: businessInfo.name,
-    image: "https://anthemhenderson.com/images/dr-jan-duffy.jpg",
+    image: `${siteConfig.url}/images/dr-jan-duffy.jpg`,
     url: businessInfo.url,
     telephone: businessInfo.phone.tel,
     email: businessInfo.email,

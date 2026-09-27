@@ -1,33 +1,27 @@
 /**
- * Lead Capture API - Send leads to Follow Up Boss
- * 
- * Features:
- * - Auto-enrichment with source tracking
- * - Duplicate detection
- * - Stage assignment
- * - Tag management
- * - Integration with Claude AI for qualification
+ * Lead Capture API — Follow Up Boss events (anthemhenderson.com)
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { FollowUpBossClient } from '@/lib/fub/client';
 import { leadFormLimiter, getClientId, checkRateLimit, getRateLimitHeaders } from '@/lib/rate-limit';
 
+const SITE_SOURCE = 'anthemhenderson.com';
+
 export interface LeadCaptureRequest {
-  // Required
   firstName?: string;
   lastName?: string;
   name?: string;
   email?: string;
   phone?: string;
 
-  // Optional
   source?: string;
   stage?: string;
   tags?: string[];
   message?: string;
-  
-  // Property search criteria
+  formType?: 'contact' | 'property-search' | 'home-valuation' | 'newsletter' | string;
+  formName?: string;
+  sourceUrl?: string;
+
   propertyType?: string;
   priceMin?: number;
   priceMax?: number;
@@ -35,23 +29,23 @@ export interface LeadCaptureRequest {
   bathrooms?: number;
   neighborhoods?: string[];
 
-  // Additional info
   timeline?: string;
   financing?: string;
   preApproved?: boolean;
-  
-  // Security
+
   turnstileToken?: string;
-  
-  // Custom fields
-  customFields?: Record<string, any>;
+
+  /** Honeypot — must stay empty */
+  company?: string;
+  website?: string;
+
+  customFields?: Record<string, unknown>;
 }
 
-// Verify Cloudflare Turnstile token
 async function verifyTurnstileToken(token: string): Promise<boolean> {
   if (!process.env.TURNSTILE_SECRET_KEY) {
     console.warn('TURNSTILE_SECRET_KEY not configured - skipping verification');
-    return true; // Allow in development
+    return true;
   }
 
   try {
@@ -75,31 +69,171 @@ async function verifyTurnstileToken(token: string): Promise<boolean> {
   }
 }
 
+function sanitizeText(value: string): string {
+  return value.replace(/<[^>]*>/g, '').trim();
+}
+
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function resolveName(data: LeadCaptureRequest): { firstName: string; lastName: string } {
+  if (data.firstName || data.lastName) {
+    return {
+      firstName: sanitizeText(data.firstName || ''),
+      lastName: sanitizeText(data.lastName || ''),
+    };
+  }
+  const full = sanitizeText(data.name || '');
+  const parts = full.split(/\s+/).filter(Boolean);
+  if (parts.length === 0) {
+    return { firstName: '', lastName: '' };
+  }
+  if (parts.length === 1) {
+    return { firstName: parts[0], lastName: '' };
+  }
+  return {
+    firstName: parts[0],
+    lastName: parts.slice(1).join(' '),
+  };
+}
+
+function getFubEventType(data: LeadCaptureRequest): string {
+  const formType = (data.formType || '').toLowerCase();
+  if (formType === 'home-valuation') return 'Seller Inquiry';
+  if (formType === 'newsletter') return 'Registration';
+  if (formType === 'property-search') return 'Property Inquiry';
+
+  const source = (data.source || '').toLowerCase();
+  if (source.includes('seller') || source.includes('valuation')) return 'Seller Inquiry';
+  if (source.includes('newsletter') || source.includes('registration')) return 'Registration';
+  if (source.includes('listing') || source.includes('property')) return 'Property Inquiry';
+
+  return 'General Inquiry';
+}
+
+function buildTrackingTags(request: NextRequest, data: LeadCaptureRequest): string[] {
+  const tags: string[] = [];
+  const url = new URL(request.url);
+
+  const utmSource = url.searchParams.get('utm_source');
+  const utmMedium = url.searchParams.get('utm_medium');
+  const utmCampaign = url.searchParams.get('utm_campaign');
+
+  if (utmSource) tags.push(`utm_source:${utmSource}`);
+  if (utmMedium) tags.push(`utm_medium:${utmMedium}`);
+  if (utmCampaign) tags.push(`utm_campaign:${utmCampaign}`);
+
+  const referrer = request.headers.get('referer');
+  if (referrer) {
+    try {
+      const refUrl = new URL(referrer);
+      if (
+        !refUrl.hostname.includes('anthemhenderson.com') &&
+        !refUrl.hostname.includes('heyberkshire.com')
+      ) {
+        tags.push(`referrer:${refUrl.hostname}`);
+      }
+    } catch {
+      // ignore invalid referrer
+    }
+  }
+
+  if (data.tags?.length) {
+    tags.push(...data.tags);
+  }
+
+  return tags;
+}
+
+function buildMessage(data: LeadCaptureRequest): string {
+  const lines: string[] = [];
+  if (data.message) {
+    lines.push(sanitizeText(data.message));
+  }
+
+  const criteria: string[] = [];
+  if (data.propertyType) criteria.push(`Type: ${data.propertyType}`);
+  if (data.priceMin || data.priceMax) {
+    const min = data.priceMin ? `$${data.priceMin.toLocaleString()}` : 'Any';
+    const max = data.priceMax ? `$${data.priceMax.toLocaleString()}` : 'Any';
+    criteria.push(`Price: ${min} - ${max}`);
+  }
+  if (data.bedrooms) criteria.push(`Bedrooms: ${data.bedrooms}+`);
+  if (data.bathrooms) criteria.push(`Bathrooms: ${data.bathrooms}+`);
+  if (data.neighborhoods?.length) {
+    criteria.push(`Areas: ${data.neighborhoods.join(', ')}`);
+  }
+  if (data.timeline) criteria.push(`Timeline: ${data.timeline}`);
+  if (data.financing) criteria.push(`Financing: ${data.financing}`);
+  if (data.preApproved) criteria.push('Pre-approved: yes');
+
+  if (criteria.length > 0) {
+    lines.push(`Search criteria:\n${criteria.join('\n')}`);
+  }
+
+  return lines.join('\n\n').trim() || 'Website lead capture';
+}
+
+async function sendFollowUpBossEvent(
+  payload: Record<string, unknown>
+): Promise<Response> {
+  const apiKey = process.env.FOLLOW_UP_BOSS_API_KEY;
+  if (!apiKey) {
+    console.error(
+      '[Lead Capture] FOLLOW_UP_BOSS_API_KEY is not configured — cannot send to Follow Up Boss'
+    );
+    throw new Error('FUB_NOT_CONFIGURED');
+  }
+
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    Authorization: `Basic ${Buffer.from(`${apiKey}:`).toString('base64')}`,
+    'X-System': SITE_SOURCE,
+  };
+
+  const systemKey = process.env.FUB_SYSTEM_KEY;
+  if (systemKey) {
+    headers['X-System-Key'] = systemKey;
+  }
+
+  return fetch('https://api.followupboss.com/v1/events', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(payload),
+  });
+}
+
 export async function POST(request: NextRequest) {
   try {
     const data: LeadCaptureRequest = await request.json();
 
-    // Check rate limit (5 submissions per hour per IP)
     const clientId = getClientId(request);
     const rateLimit = await checkRateLimit(leadFormLimiter, clientId);
-    
+
     if (!rateLimit.success) {
       const resetDate = new Date(rateLimit.reset);
       const minutesUntilReset = Math.ceil((rateLimit.reset - Date.now()) / 60000);
-      
+
       return NextResponse.json(
-        { 
+        {
           error: `Too many submissions. Please try again in ${minutesUntilReset} minute${minutesUntilReset > 1 ? 's' : ''}.`,
           retryAfter: resetDate.toISOString(),
         },
-        { 
+        {
           status: 429,
           headers: getRateLimitHeaders(rateLimit),
         }
       );
     }
 
-    // Verify Turnstile CAPTCHA (if configured)
+    if ((data.company && data.company.trim()) || (data.website && data.website.trim())) {
+      return NextResponse.json(
+        { success: true },
+        { headers: getRateLimitHeaders(rateLimit) }
+      );
+    }
+
     if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && process.env.TURNSTILE_SECRET_KEY) {
       if (!data.turnstileToken) {
         return NextResponse.json(
@@ -117,7 +251,6 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Validate required fields
     if (!data.email && !data.phone) {
       return NextResponse.json(
         { error: 'Email or phone is required' },
@@ -125,188 +258,128 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!data.firstName && !data.lastName && !data.name) {
+    if (data.email && !isValidEmail(data.email)) {
+      return NextResponse.json(
+        { error: 'A valid email address is required' },
+        { status: 400 }
+      );
+    }
+
+    const { firstName, lastName } = resolveName(data);
+    if (!firstName && !lastName) {
       return NextResponse.json(
         { error: 'Name is required' },
         { status: 400 }
       );
     }
 
-    // Initialize FUB client
-    const fub = new FollowUpBossClient({
-      apiKey: process.env.FUB_API_KEY || '',
-      systemKey: process.env.FUB_SYSTEM_KEY,
-    });
-
-    // Check for existing lead (deduplication)
-    let existingPerson = null;
-    if (data.email) {
-      existingPerson = await fub.findPerson({ email: data.email });
-    } else if (data.phone) {
-      existingPerson = await fub.findPerson({ phone: data.phone });
+    if (!process.env.FOLLOW_UP_BOSS_API_KEY) {
+      console.error(
+        '[Lead Capture] FOLLOW_UP_BOSS_API_KEY is not configured — cannot send to Follow Up Boss'
+      );
+      return NextResponse.json(
+        { error: 'Lead capture is temporarily unavailable. Please call or text Dr. Jan Duffy.' },
+        { status: 503, headers: getRateLimitHeaders(rateLimit) }
+      );
     }
 
-    // Prepare person data
-    const personData: any = {
-      name: data.name || `${data.firstName || ''} ${data.lastName || ''}`.trim(),
-      emails: data.email ? [{ value: data.email }] : undefined,
-      phones: data.phone ? [{ value: data.phone }] : undefined,
-      source: enrichSource(data.source, request),
-      stage: data.stage || 'New Lead',
-      customFields: {
-        ...data.customFields,
-        propertyType: data.propertyType,
-        priceMin: data.priceMin,
-        priceMax: data.priceMax,
-        bedrooms: data.bedrooms,
-        bathrooms: data.bathrooms,
-        neighborhoods: data.neighborhoods?.join(', '),
-        timeline: data.timeline,
-        financing: data.financing,
-        preApproved: data.preApproved,
-        capturedAt: new Date().toISOString(),
-        captureUrl: request.headers.get('referer') || 'direct',
+    const formName = data.formName || data.source || 'lead-capture';
+    const sourceUrl =
+      data.sourceUrl ||
+      request.headers.get('referer') ||
+      SITE_SOURCE;
+
+    const trackingTags = buildTrackingTags(request, data);
+    const personTags = [
+      SITE_SOURCE,
+      formName,
+      ...trackingTags,
+      ...getPropertyTags(data),
+      ...getSourceTagList(data.source),
+    ].filter((t): t is string => Boolean(t));
+
+    const eventPayload = {
+      source: SITE_SOURCE,
+      system: SITE_SOURCE,
+      type: getFubEventType(data),
+      message: buildMessage(data),
+      description: `${formName} — ${sourceUrl}`,
+      sourceUrl,
+      person: {
+        firstName,
+        lastName,
+        emails: data.email ? [{ value: data.email.trim() }] : [],
+        phones: data.phone ? [{ value: data.phone.trim() }] : [],
+        tags: personTags,
       },
     };
 
-    // Create or update person
-    const person = await fub.upsertPerson(personData);
-
-    // Add tags
-    const tags = [
-      ...(data.tags || []),
-      'website-lead',
-      getSourceTag(data.source),
-      ...getPropertyTags(data),
-    ].filter((t): t is string => Boolean(t));
-
-    for (const tag of tags) {
-      try {
-        await fub.addTag(person.id, tag);
-      } catch (error) {
-        console.error(`Error adding tag "${tag}":`, error);
+    let fubResponse: Response;
+    try {
+      fubResponse = await sendFollowUpBossEvent(eventPayload);
+    } catch (error) {
+      if (error instanceof Error && error.message === 'FUB_NOT_CONFIGURED') {
+        return NextResponse.json(
+          { error: 'Lead capture is temporarily unavailable. Please call or text Dr. Jan Duffy.' },
+          { status: 503, headers: getRateLimitHeaders(rateLimit) }
+        );
       }
+      console.error('[Lead Capture] Follow Up Boss request failed:', error);
+      return NextResponse.json(
+        { error: 'Failed to send lead to Follow Up Boss' },
+        { status: 502, headers: getRateLimitHeaders(rateLimit) }
+      );
     }
 
-    // Create initial event with message
-    if (data.message) {
-      await fub.createEvent({
-        source: 'website',
-        type: 'Inbound Lead',
-        message: `Lead message: ${data.message}`,
-        personId: person.id,
-        data: {
-          formType: data.source || 'contact-form',
-          url: request.headers.get('referer'),
-        },
-      });
-    }
-
-    // Build search criteria summary
-    const searchCriteria = buildSearchCriteria(data);
-    if (searchCriteria) {
-      await fub.createEvent({
-        source: 'website',
-        type: 'Property Search',
-        message: `Search criteria:\n${searchCriteria}`,
-        personId: person.id,
-        data: {
-          priceMin: data.priceMin,
-          priceMax: data.priceMax,
-          bedrooms: data.bedrooms,
-          bathrooms: data.bathrooms,
-          neighborhoods: data.neighborhoods,
-        },
-      });
+    if (!fubResponse.ok) {
+      console.error(
+        `[Lead Capture] Follow Up Boss API error: HTTP ${fubResponse.status}`
+      );
+      return NextResponse.json(
+        { error: 'Failed to send lead to Follow Up Boss' },
+        { status: 502, headers: getRateLimitHeaders(rateLimit) }
+      );
     }
 
     return NextResponse.json(
       {
         success: true,
-        personId: person.id,
-        isNew: !existingPerson,
-        message: existingPerson 
-          ? 'Lead updated successfully' 
-          : 'Lead created successfully',
+        message: 'Lead submitted successfully',
       },
-      {
-        headers: getRateLimitHeaders(rateLimit),
-      }
+      { headers: getRateLimitHeaders(rateLimit) }
     );
-
   } catch (error) {
     console.error('[Lead Capture] Error:', error);
-    
+
     return NextResponse.json(
-      { 
-        error: 'Failed to capture lead',
-        details: error instanceof Error ? error.message : 'Unknown error',
-      },
+      { error: 'Failed to capture lead' },
       { status: 500 }
     );
   }
 }
 
-/**
- * Enrich source with UTM parameters and referrer
- */
-function enrichSource(source: string | undefined, request: NextRequest): string {
-  const url = new URL(request.url);
-  
-  // Check UTM parameters
-  const utmSource = url.searchParams.get('utm_source');
-  const utmMedium = url.searchParams.get('utm_medium');
-  const utmCampaign = url.searchParams.get('utm_campaign');
-
-  if (utmSource) {
-    return `${utmSource}${utmMedium ? `/${utmMedium}` : ''}${utmCampaign ? `/${utmCampaign}` : ''}`;
-  }
-
-  // Check referrer
-  const referrer = request.headers.get('referer');
-  if (referrer) {
-    try {
-      const refUrl = new URL(referrer);
-      if (!refUrl.hostname.includes('heyberkshire.com') && !refUrl.hostname.includes('anthemhenderson.com')) {
-        return `referral/${refUrl.hostname}`;
-      }
-    } catch (e) {
-      // Invalid URL
-    }
-  }
-
-  return source || 'website/direct';
-}
-
-/**
- * Get source-specific tag
- */
-function getSourceTag(source?: string): string | null {
-  if (!source) return null;
+function getSourceTagList(source?: string): string[] {
+  if (!source) return [];
 
   const lowerSource = source.toLowerCase();
+  const tags: string[] = [];
 
-  if (lowerSource.includes('facebook')) return 'facebook-lead';
-  if (lowerSource.includes('google')) return 'google-lead';
-  if (lowerSource.includes('zillow')) return 'zillow-lead';
-  if (lowerSource.includes('realtor')) return 'realtor-lead';
-  if (lowerSource.includes('instagram')) return 'instagram-lead';
-  
-  return null;
+  if (lowerSource.includes('facebook')) tags.push('facebook-lead');
+  if (lowerSource.includes('google')) tags.push('google-lead');
+  if (lowerSource.includes('zillow')) tags.push('zillow-lead');
+  if (lowerSource.includes('realtor')) tags.push('realtor-lead');
+  if (lowerSource.includes('instagram')) tags.push('instagram-lead');
+
+  return tags;
 }
 
-/**
- * Get property-specific tags
- */
 function getPropertyTags(data: LeadCaptureRequest): string[] {
   const tags: string[] = [];
 
-  // Neighborhood tags
   if (data.neighborhoods) {
     tags.push(...data.neighborhoods);
   }
 
-  // Budget tags
   if (data.priceMax) {
     if (data.priceMax > 1000000) {
       tags.push('luxury');
@@ -315,17 +388,14 @@ function getPropertyTags(data: LeadCaptureRequest): string[] {
     }
   }
 
-  // Property type tags
   if (data.propertyType) {
     tags.push(data.propertyType.toLowerCase());
   }
 
-  // Financing tags
   if (data.preApproved) {
     tags.push('pre-approved');
   }
 
-  // Timeline tags
   if (data.timeline) {
     const lowerTimeline = data.timeline.toLowerCase();
     if (lowerTimeline.includes('immediately') || lowerTimeline.includes('asap')) {
@@ -334,43 +404,4 @@ function getPropertyTags(data: LeadCaptureRequest): string[] {
   }
 
   return tags;
-}
-
-/**
- * Build search criteria summary
- */
-function buildSearchCriteria(data: LeadCaptureRequest): string | null {
-  const criteria: string[] = [];
-
-  if (data.propertyType) {
-    criteria.push(`Type: ${data.propertyType}`);
-  }
-
-  if (data.priceMin || data.priceMax) {
-    const min = data.priceMin ? `$${data.priceMin.toLocaleString()}` : 'Any';
-    const max = data.priceMax ? `$${data.priceMax.toLocaleString()}` : 'Any';
-    criteria.push(`Price: ${min} - ${max}`);
-  }
-
-  if (data.bedrooms) {
-    criteria.push(`Bedrooms: ${data.bedrooms}+`);
-  }
-
-  if (data.bathrooms) {
-    criteria.push(`Bathrooms: ${data.bathrooms}+`);
-  }
-
-  if (data.neighborhoods && data.neighborhoods.length > 0) {
-    criteria.push(`Areas: ${data.neighborhoods.join(', ')}`);
-  }
-
-  if (data.timeline) {
-    criteria.push(`Timeline: ${data.timeline}`);
-  }
-
-  if (data.financing) {
-    criteria.push(`Financing: ${data.financing}`);
-  }
-
-  return criteria.length > 0 ? criteria.join('\n') : null;
 }
