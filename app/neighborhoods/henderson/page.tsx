@@ -323,7 +323,7 @@ export default function HendersonPage() {
 
           <NearbyAmenitiesSection
             title="Anthem & Henderson Amenities"
-            description="Anthem is Henderson's largest master plan — use this map for everyday errands, healthcare, and recreation near Sun City Anthem and Solera."
+            description="Use this map for everyday errands, healthcare, and recreation near Sun City Anthem and Solera in southeast Henderson."
             className="mb-16"
           />
 

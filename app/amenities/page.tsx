@@ -16,6 +16,7 @@ import {
   combineSchemas,
   generateBreadcrumbSchema,
   generateCommunityPlaceSchema,
+  generateFAQSchema,
   generateItemListSchema,
 } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
@@ -40,6 +41,7 @@ const breadcrumbs = [
 
 const pageSchemas = combineSchemas(
   generateBreadcrumbSchema(breadcrumbs),
+  generateFAQSchema(AMENITIES_PAGE_FAQS),
   generateItemListSchema(
     "Nearby amenities in Anthem Henderson",
     CURATED_ANTHEM_PLACES.map((p) => ({
@@ -53,7 +55,7 @@ const pageSchemas = combineSchemas(
   generateCommunityPlaceSchema({
     name: "Anthem Henderson, Nevada",
     description:
-      "4,775-acre master-planned community in Henderson, NV — Sun City Anthem, Solera, Anthem Country Club, and Anthem Highlands.",
+      "Master-planned community in Henderson, NV — Sun City Anthem, Solera, Anthem Country Club, and Anthem Highlands.",
     address: ANTHEM_COMMUNITY_MAP.centerAddress,
     lat: ANTHEM_COMMUNITY_MAP.lat,
     lng: ANTHEM_COMMUNITY_MAP.lng,
@@ -77,7 +79,7 @@ const writtenSections = [
     id: "dining",
     title: "Dining near Anthem Henderson",
     body: [
-      "Sun City Anthem residents often start at Yorktown Grill inside the Anthem Center on Hampton Road — on-site dining without leaving the 55+ village.",
+      "Sun City Anthem residents often dine at the on-site restaurant inside Anthem Center on Hampton Road without leaving the 55+ village.",
       "For broader choices, Horizon Marketplace on South Eastern Avenue and The District at Green Valley Ranch add national chains and local restaurants within a short drive of most Anthem addresses.",
     ],
   },
@@ -93,7 +95,7 @@ const writtenSections = [
     id: "golf",
     title: "Golf",
     body: [
-      "Revere Golf Club on Anthem Club Drive is the public course along the Country Club corridor. Anthem Country Club remains a separate private, guard-gated club for members and guests.",
+      "Revere Golf Club on Hampton Road is the public course along the Country Club corridor. Anthem Country Club remains a separate private, guard-gated club for members and guests.",
     ],
   },
   {

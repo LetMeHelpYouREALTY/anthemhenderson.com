@@ -1,8 +1,7 @@
 /**
  * Anthem Henderson amenity map — community center, categories, and verified curated places.
  * Center: Sun City Anthem Anthem Center (official HOA clubhouse address).
- * @see https://www.scahoa.com/ — 2450 Hampton Rd, Henderson, NV 89052
- * Coordinates: OpenStreetMap Nominatim for "Anthem Center" at that address (2026-09).
+ * @see https://www.scahoa.com/anthem-center — 2450 Hampton Rd, Henderson, NV 89052
  */
 
 export type AmenityCategoryId =
@@ -27,6 +26,8 @@ export type CuratedPlace = {
   schemaType: string;
   lat: number;
   lng: number;
+  /** Official page used to verify name and address (not shown in UI). */
+  sourceUrl: string;
   note?: string;
 };
 
@@ -44,9 +45,6 @@ export const ANTHEM_COMMUNITY_MAP = {
   searchRadiusMeters: 8000,
 };
 
-/**
- * Category order for 55+ / active-adult heavy Anthem sites: healthcare & recreation first; schools last.
- */
 export const AMENITY_CATEGORY_ORDER: AmenityCategoryId[] = [
   "healthcare",
   "golf",
@@ -65,9 +63,7 @@ export const AMENITY_CATEGORY_ORDER: AmenityCategoryId[] = [
 export type AmenityCategoryConfig = {
   id: AmenityCategoryId;
   label: string;
-  /** Google Places (New) primary types for searchNearby */
   placeTypes: string[];
-  /** Shown in filter UI for 55+ communities */
   emphasized?: boolean;
 };
 
@@ -139,7 +135,7 @@ export const AMENITY_CATEGORIES: AmenityCategoryConfig[] = [
   },
 ];
 
-/** Verified places with published street addresses (used for fallback map list + ItemList schema). */
+/** Verified places with published street addresses (fallback list + ItemList schema). */
 export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
   {
     id: "anthem-center",
@@ -149,6 +145,7 @@ export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
     schemaType: "SportsActivityLocation",
     lat: 35.9563105,
     lng: -115.0957956,
+    sourceUrl: "https://www.scahoa.com/anthem-center",
     note: "Main 55+ clubhouse with pools, fitness, and valley views.",
   },
   {
@@ -159,6 +156,7 @@ export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
     schemaType: "SportsActivityLocation",
     lat: 35.9568,
     lng: -115.0965,
+    sourceUrl: "https://www.scahoa.com/independence",
     note: "Sun City Anthem recreation center with Freedom Hall.",
   },
   {
@@ -169,16 +167,18 @@ export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
     schemaType: "SportsActivityLocation",
     lat: 35.9682,
     lng: -115.1028,
+    sourceUrl: "https://www.scahoa.com/",
     note: "Sun City Anthem recreation center with indoor pool and pickleball.",
   },
   {
     id: "revere-golf",
     name: "Revere Golf Club",
-    address: "2600 W Anthem Club Dr, Henderson, NV 89052",
+    address: "2600 Hampton Rd, Henderson, NV 89052",
     category: "golf",
     schemaType: "GolfCourse",
-    lat: 35.9625,
-    lng: -115.0892,
+    lat: 35.9628,
+    lng: -115.0889,
+    sourceUrl: "https://reveregolf.com/contact-us/",
   },
   {
     id: "smiths-eastern",
@@ -188,6 +188,7 @@ export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
     schemaType: "GroceryStore",
     lat: 35.9992,
     lng: -115.1183,
+    sourceUrl: "https://www.smithsfoodanddrug.com/stores/grocery/nv/henderson/10616-s-eastern-ave",
     note: "Horizon Marketplace — primary grocery for Anthem.",
   },
   {
@@ -198,6 +199,7 @@ export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
     schemaType: "Hospital",
     lat: 36.0031,
     lng: -115.1174,
+    sourceUrl: "https://www.dignityhealth.org/las-vegas/locations/siena",
   },
   {
     id: "henderson-hospital",
@@ -207,6 +209,7 @@ export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
     schemaType: "Hospital",
     lat: 36.0729,
     lng: -115.0298,
+    sourceUrl: "https://www.hendersonhospital.com/about",
   },
   {
     id: "galleria-sunset",
@@ -216,6 +219,7 @@ export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
     schemaType: "ShoppingCenter",
     lat: 36.0636,
     lng: -115.0365,
+    sourceUrl: "https://www.galleriaatsunset.com/",
   },
   {
     id: "district-green-valley",
@@ -225,26 +229,29 @@ export const CURATED_ANTHEM_PLACES: CuratedPlace[] = [
     schemaType: "ShoppingCenter",
     lat: 36.0211,
     lng: -115.0842,
+    sourceUrl: "https://shopthedistrictgvr.com/contact-us/",
   },
   {
     id: "sloan-canyon",
     name: "Sloan Canyon National Conservation Area",
-    address: "Sloan Canyon Access Rd, Henderson, NV 89052",
+    address: "2998 Nawghaw Poa Rd, Henderson, NV 89044",
     category: "parks",
     schemaType: "Park",
-    lat: 35.988,
-    lng: -115.128,
-    note: "Trail access from the Anthem foothills.",
+    lat: 35.9161,
+    lng: -115.1262,
+    sourceUrl: "https://www.blm.gov/visit/sloan-canyon-nca",
+    note: "Visitor contact station; trail access from the Anthem foothills.",
   },
   {
-    id: "yorktown-grill",
-    name: "Yorktown Grill",
+    id: "sun-city-anthem-restaurant",
+    name: "Sun City Anthem Restaurant & Venue",
     address: "2450 Hampton Rd, Henderson, NV 89052",
     category: "restaurants",
     schemaType: "Restaurant",
     lat: 35.9564,
     lng: -115.0959,
-    note: "On-site dining at Sun City Anthem.",
+    sourceUrl: "https://www.masterpiececuisine.com/restaurant",
+    note: "On-site dining at Anthem Center (operator-managed).",
   },
 ];
 
@@ -272,7 +279,7 @@ export const AMENITIES_PAGE_FAQS = [
   {
     question: "Is there golf near Anthem Henderson?",
     answer:
-      "Revere Golf Club borders the Anthem Country Club area on Anthem Club Drive. Anthem Country Club is a separate private club inside the guard-gated community.",
+      "Revere Golf Club on Hampton Road borders the Anthem Country Club corridor. Anthem Country Club is a separate private club inside the guard-gated community.",
   },
   {
     question: "How far is Harry Reid International Airport from Anthem?",
