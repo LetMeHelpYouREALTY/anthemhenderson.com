@@ -9,7 +9,7 @@ export const siteConfig = {
   brandLine: "Anthem Henderson | Homes By Dr. Jan Duffy",
   brandName: "Anthem Henderson | Homes By Dr. Jan Duffy",
   shortName: "Anthem Henderson",
-  url: "https://anthemhenderson.com",
+  url: "https://www.anthemhenderson.com",
   description:
     "Anthem Henderson | Homes By Dr. Jan Duffy — search Sun City Anthem, Solera, Anthem Country Club, and Anthem Highlands. BHHS Nevada Properties.",
 };

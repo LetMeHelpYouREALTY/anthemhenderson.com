@@ -498,12 +498,14 @@ export function getPageSeo(pathname: string): PageSeoEntry {
 export function createPageMetadata(pathname: string): Metadata {
   const seo = getPageSeo(pathname);
   const canonical = `${BASE_URL}${seo.path === "/" ? "" : seo.path}`;
-  // Homepage uses absolute title (avoids Next template edge cases on `/`).
-  // Other routes use a short title; layout template appends the brand.
-  const ogTitle = `${seo.title} | ${BRAND}`;
+  // Homepage: single concise title (30–60 chars); layout template must not append brand again.
+  const ogTitle =
+    seo.path === "/"
+      ? seo.title
+      : `${seo.title} | ${BRAND}`;
   const title =
     seo.path === "/"
-      ? { absolute: ogTitle }
+      ? { absolute: seo.title }
       : seo.title;
 
   return {
