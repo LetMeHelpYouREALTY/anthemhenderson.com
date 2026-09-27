@@ -14,6 +14,7 @@ import {
   type FAQItem,
 } from "@/lib/schema";
 import { FAQ_DOMAIN_OVERRIDES, FAQ_BY_PAGE_TYPE } from "@/lib/faq-config";
+import { AMENITIES_PAGE_FAQS } from "@/lib/amenities/anthem-amenities";
 
 const BASE_URL = siteConfig.url;
 const BRAND = "Anthem Henderson | Homes By Dr. Jan Duffy";
@@ -377,6 +378,24 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       { name: "Neighborhoods", url: "/neighborhoods" },
       { name: "Mountain's Edge", url: "/neighborhoods/mountains-edge" }
     )
+  ),
+  "/amenities": page(
+    "/amenities",
+    "Nearby Amenities in Anthem Henderson, NV",
+    `Healthcare, golf, recreation, grocery, and shopping near Anthem Henderson — interactive map and local guide. ${BRAND}. Call ${PHONE}.`,
+    crumbs({ name: "Nearby Amenities", url: "/amenities" }),
+    {
+      faqs: AMENITIES_PAGE_FAQS,
+      geoFocus: "Anthem Henderson, NV",
+      keywords: [
+        "Anthem Henderson amenities",
+        "Sun City Anthem nearby",
+        "things near Anthem Henderson",
+        "Anthem Henderson grocery",
+      ],
+      directAnswer:
+        "Smith's on South Eastern Avenue, St. Rose Siena Hospital, Revere Golf Club, and Sun City Anthem recreation centers are among the everyday amenities near Anthem Henderson. Call 702-222-1964 for a neighborhood tour.",
+    }
   ),
   "/55-plus-communities": page(
     "/55-plus-communities",

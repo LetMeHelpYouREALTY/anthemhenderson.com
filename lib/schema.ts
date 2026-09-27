@@ -564,6 +564,89 @@ export function generateWebPageSchema(page: {
   };
 }
 
+/**
+ * ItemList of verified local places (amenities page GEO).
+ */
+export function generateItemListSchema(
+  name: string,
+  items: Array<{
+    name: string;
+    address: string;
+    schemaType: string;
+    lat?: number;
+    lng?: number;
+  }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": item.schemaType,
+        name: item.name,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: item.address,
+          addressLocality: "Henderson",
+          addressRegion: "NV",
+          addressCountry: "US",
+        },
+        ...(item.lat != null &&
+          item.lng != null && {
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: item.lat,
+              longitude: item.lng,
+            },
+          }),
+      },
+    })),
+  };
+}
+
+/**
+ * Community Place with geo coordinates (amenities / hyperlocal pages).
+ */
+export function generateCommunityPlaceSchema(options: {
+  name: string;
+  description: string;
+  address: string;
+  lat: number;
+  lng: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    "@id": `${BASE_URL}#anthem-henderson-place`,
+    name: options.name,
+    description: options.description,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: options.address,
+      addressLocality: "Henderson",
+      addressRegion: "NV",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: options.lat,
+      longitude: options.lng,
+    },
+    containedInPlace: {
+      "@type": "City",
+      name: "Henderson",
+      containedInPlace: {
+        "@type": "State",
+        name: "Nevada",
+      },
+    },
+  };
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================

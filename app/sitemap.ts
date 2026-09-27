@@ -14,7 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       path === "/listings" ||
       path === "/contact" ||
       path === "/buyers" ||
-      path === "/sellers"
+      path === "/sellers" ||
+      path === "/amenities"
     ) {
       return 0.9;
     }

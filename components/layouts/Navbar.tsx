@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/luxury-homes", label: "Country Club" },
   { href: "/buyers", label: "Buyers" },
   { href: "/sellers", label: "Sellers" },
+  { href: "/amenities", label: "Amenities" },
 ];
 
 export default function Navbar() {

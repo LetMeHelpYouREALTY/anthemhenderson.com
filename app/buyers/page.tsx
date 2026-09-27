@@ -3,6 +3,7 @@ import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import {
   Phone,
   Search,
@@ -375,6 +376,12 @@ export default function BuyersPage() {
               </div>
             </div>
           </section>
+
+          <NearbyAmenitiesSection
+            title="Explore Anthem Before You Buy"
+            description="See hospitals, grocery, golf, and recreation near Anthem Henderson while you compare Sun City Anthem, Solera, and Country Club listings."
+            className="mb-16"
+          />
 
           {/* FAQ */}
           <section className="mb-16 max-w-4xl mx-auto">
