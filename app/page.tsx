@@ -11,6 +11,7 @@ import {
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import AnthemFaqAccordion from "@/components/sections/AnthemFaqAccordion";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import { getFaqsForDomain } from "@/lib/faq-config";
 import { createPageMetadata } from "@/lib/page-seo";
 import { officeInfo } from "@/lib/site-config";
@@ -201,6 +202,8 @@ export default function Home() {
             </div>
           </section>
 
+          <NearbyAmenitiesSection />
+
           {/* Article + agent sidebar */}
           <section aria-label="Anthem Henderson guide" className="w-full border-b border-border bg-background">
             <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
@@ -285,6 +288,11 @@ export default function Home() {
                     <li>
                       <Link href="/luxury-homes" className="text-primary hover:underline">
                         Anthem Country Club &amp; luxury listings
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/amenities" className="text-primary hover:underline">
+                        Nearby amenities in Anthem Henderson
                       </Link>
                     </li>
                     <li>

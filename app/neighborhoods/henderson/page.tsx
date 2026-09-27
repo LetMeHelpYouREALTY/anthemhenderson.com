@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Shield, Users, GraduationCap, TreePine } from "lucide-react";
@@ -319,6 +320,12 @@ export default function HendersonPage() {
               </cite>
             </div>
           </section>
+
+          <NearbyAmenitiesSection
+            title="Anthem & Henderson Amenities"
+            description="Anthem is Henderson's largest master plan — use this map for everyday errands, healthcare, and recreation near Sun City Anthem and Solera."
+            className="mb-16"
+          />
 
           {/* FAQ Section */}
           <section className="mb-16 max-w-4xl mx-auto">

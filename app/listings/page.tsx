@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import Link from "next/link";
 import {
   Phone,
@@ -453,6 +454,12 @@ export default function ListingsPage() {
               </div>
             </div>
           </section>
+
+          <NearbyAmenitiesSection
+            title="Amenities Near Anthem Listings"
+            description="While you browse MLS inventory, see what hospitals, grocery, golf, and recreation sit closest to Anthem Henderson villages."
+            className="mb-16"
+          />
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

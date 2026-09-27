@@ -14,6 +14,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import SchemaScript from "@/components/SchemaScript";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import {
   generateBreadcrumbSchema,
   generateSeniorCommunitySchema,
@@ -300,6 +301,12 @@ export default function SunCityAnthemPage() {
               </cite>
             </div>
           </section>
+
+          <NearbyAmenitiesSection
+            title="What's Near Sun City Anthem"
+            description="Healthcare, golf, grocery, and recreation within minutes of Sun City Anthem recreation centers — map centered on Anthem Center, 2450 Hampton Road."
+            className="border-0"
+          />
 
           {/* CTA */}
           <section className="text-center bg-green-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

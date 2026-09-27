@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import { createPageMetadata } from "@/lib/page-seo";
 import Footer from "@/components/layouts/Footer";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { 
@@ -358,6 +359,12 @@ export default function RelocationPage() {
               </div>
             </div>
           </section>
+
+          <NearbyAmenitiesSection
+            title="What's Near Anthem Henderson"
+            description="Relocating buyers often start in Anthem's 55+ and foothill villages — preview grocery, healthcare, and recreation before your first tour."
+            className="mb-16"
+          />
 
           {/* FAQ */}
           <section className="mb-16 max-w-4xl mx-auto">
