@@ -93,7 +93,7 @@ export function generateRealEstateAgentSchema() {
     logo: `${BASE_URL}/realty/dr-jan-duffy.jpg`,
     image: `${BASE_URL}/realty/dr-jan-duffy.jpg`,
     description: siteConfig.description,
-    telephone: "+17022221964",
+    telephone: "+17025000453",
     email: agentInfo.email,
     priceRange: "$$",
     address: {

@@ -35,11 +35,11 @@ export default function Footer() {
             </div>
             <div className="flex flex-col items-center gap-3 sm:items-end">
               <a
-                href="tel:+17022221964"
+                href="tel:+17025000453"
                 className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-lg bg-primary px-8 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 <Phone className="h-5 w-5" aria-hidden="true" />
-                (702) 222-1964
+                (702) 500-0453
               </a>
               <Link
                 href="/contact"
@@ -86,7 +86,7 @@ export default function Footer() {
             Market statistics on this page are aggregate figures and structural community facts
             believed accurate as of their stated date, but are not guaranteed and should be
             independently verified. For current, live Anthem Henderson MLS listings, contact Dr.
-            Jan Duffy at (702) 222-1964.
+            Jan Duffy at (702) 500-0453.
           </p>
         </div>
       </div>

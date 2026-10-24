@@ -15,7 +15,7 @@ export const FAQ_BY_PAGE_TYPE: Record<string, FAQ[]> = {
 
   community: [
     { question: "What is the current median home price in this community?",
-      answer: "Median prices shift monthly. Call/text Dr. Jan at 702-222-1964 for a live comp pull — she tracks every sale in this community and can give you a precise number within minutes." },
+      answer: "Median prices shift monthly. Call/text Dr. Jan at 702-500-0453 for a live comp pull — she tracks every sale in this community and can give you a precise number within minutes." },
     { question: "How long do homes stay on the market here?",
       answer: "Well-priced homes in master-planned Las Vegas communities typically sell in 14–28 days. Overpriced listings can sit for 60+ days. Dr. Jan's insider knowledge of days-on-market data helps buyers spot value and sellers price right the first time." },
     { question: "Are there HOA fees in this community?",
@@ -34,7 +34,7 @@ export const FAQ_BY_PAGE_TYPE: Record<string, FAQ[]> = {
     { question: "Are luxury homes in Las Vegas a good investment?",
       answer: "Guard-gated communities like The Ridges and MacDonald Highlands have appreciated 40–60% over the past five years. Las Vegas luxury benefits from no state income tax, which attracts high-net-worth buyers from California, New York, and internationally — supporting long-term demand." },
     { question: "How discreet is the buying process for high-value properties?",
-      answer: "Very. Dr. Jan regularly handles off-market transactions and can structure showings privately. Many luxury listings in Las Vegas never appear on the public MLS — call 702-222-1964 for confidential access." },
+      answer: "Very. Dr. Jan regularly handles off-market transactions and can structure showings privately. Many luxury listings in Las Vegas never appear on the public MLS — call 702-500-0453 for confidential access." },
     { question: "What financing options exist for luxury properties?",
       answer: "Jumbo loans, portfolio lending, and cash purchases are all common in the luxury segment. Dr. Jan works with specialized luxury mortgage advisors who understand high-value transactions and can close quickly without disrupting your privacy." },
     { question: "How long do luxury homes typically take to sell?",
@@ -55,7 +55,7 @@ export const FAQ_BY_PAGE_TYPE: Record<string, FAQ[]> = {
     { question: "How is the resale market for 55+ homes?",
       answer: "Strong and growing. Baby Boomers are retiring in record numbers and Nevada's tax advantages make Las Vegas a top relocation destination. Dr. Jan has sold more Sun City Summerlin homes than any other agent and sees consistent demand — often with multiple offers on well-priced listings." },
     { question: "What's the difference between Sun City, Del Webb, and Trilogy?",
-      answer: "Sun City Summerlin (built 1988–2003) is the most established — larger lots, mature landscaping, proven community culture. Del Webb communities are newer with modern floor plans. Trilogy at Sunstone is the newest, with luxury-level amenities. Dr. Jan offers a free community comparison consultation — call 702-222-1964." },
+      answer: "Sun City Summerlin (built 1988–2003) is the most established — larger lots, mature landscaping, proven community culture. Del Webb communities are newer with modern floor plans. Trilogy at Sunstone is the newest, with luxury-level amenities. Dr. Jan offers a free community comparison consultation — call 702-500-0453." },
   ],
 
   search: [
@@ -68,7 +68,7 @@ export const FAQ_BY_PAGE_TYPE: Record<string, FAQ[]> = {
     { question: "Do I need a pre-approval before I start looking?",
       answer: "Not to start looking — but you'll need one before making an offer. Dr. Jan recommends getting pre-approved early so you're ready to move fast on good properties. She works with trusted local lenders who can turn pre-approvals around in 24 hours." },
     { question: "Are there homes available under $400K in Las Vegas?",
-      answer: "Yes — the North Las Vegas and East Las Vegas submarkets have solid inventory under $400K. Condos and townhomes in Henderson and Summerlin also hit this price point. Dr. Jan will show you exactly what's available in your budget right now — call 702-222-1964." },
+      answer: "Yes — the North Las Vegas and East Las Vegas submarkets have solid inventory under $400K. Condos and townhomes in Henderson and Summerlin also hit this price point. Dr. Jan will show you exactly what's available in your budget right now — call 702-500-0453." },
     { question: "How do I make a competitive offer in Las Vegas?",
       answer: "Strong pre-approval, clean contract terms, flexible close date, and realistic pricing. Dr. Jan's offer strategy — refined over 500+ transactions — consistently wins in competitive situations. She'll advise on escalation clauses, appraisal gaps, and seller concessions specific to each listing." },
   ],
@@ -90,7 +90,7 @@ export const FAQ_BY_PAGE_TYPE: Record<string, FAQ[]> = {
 
   investment: [
     { question: "What are typical cap rates for Las Vegas rental properties?",
-      answer: "Single-family rentals in Las Vegas currently yield 4–6% cap rates. Multi-family and small commercial run 5–7%. Short-term rental properties near the Strip can push 8–12% but require active management. Dr. Jan runs full ROI analysis before every investment purchase — call 702-222-1964." },
+      answer: "Single-family rentals in Las Vegas currently yield 4–6% cap rates. Multi-family and small commercial run 5–7%. Short-term rental properties near the Strip can push 8–12% but require active management. Dr. Jan runs full ROI analysis before every investment purchase — call 702-500-0453." },
     { question: "Is Las Vegas a landlord-friendly state?",
       answer: "Very. Nevada has no rent control, relatively short eviction timelines (30–45 days for non-payment), and no state income tax on rental income. This makes it significantly more favorable than California, Oregon, or New York for rental property owners." },
     { question: "What neighborhoods have the best rental demand?",
@@ -111,22 +111,22 @@ export const FAQ_DOMAIN_OVERRIDES: Record<string, FAQ[]> = {
 
   "anthemhenderson.com": [
     { question: "What neighborhoods make up Anthem Henderson?",
-      answer: "Anthem is Henderson's largest master plan — about 4,775 acres with 14,000+ homes across Sun City Anthem (55+), Solera at Anthem (55+ guard-gated), Anthem Country Club (guard-gated golf luxury), Anthem Highlands, Anthem Coventry, and Madeira Canyon. Call 702-222-1964 and Dr. Jan will map which sub-community fits your lifestyle and budget." },
+      answer: "Anthem is Henderson's largest master plan — about 4,775 acres with 14,000+ homes across Sun City Anthem (55+), Solera at Anthem (55+ guard-gated), Anthem Country Club (guard-gated golf luxury), Anthem Highlands, Anthem Coventry, and Madeira Canyon. Call 702-500-0453 and Dr. Jan will map which sub-community fits your lifestyle and budget." },
     { question: "What is the difference between Sun City Anthem and Solera at Anthem?",
       answer: "Both are Del Webb 55+ communities. Sun City Anthem is the large resort-scale option (7,000+ homes, multiple recreation centers, golf, and extensive clubs). Solera is smaller and guard-gated, with a more intimate clubhouse amenity set and typically lower HOA scale. Dr. Jan tours both so you can compare floor plans, views, and monthly costs side by side." },
     { question: "How much do Anthem Henderson homes cost?",
-      answer: "Prices vary widely by sub-community — from entry-level Sun City Anthem and Solera inventory up through multi-million Anthem Country Club estates. Medians move monthly. Call/text Dr. Jan at 702-222-1964 for a live comp pull by floor plan, lot position, and upgrades." },
+      answer: "Prices vary widely by sub-community — from entry-level Sun City Anthem and Solera inventory up through multi-million Anthem Country Club estates. Medians move monthly. Call/text Dr. Jan at 702-500-0453 for a live comp pull by floor plan, lot position, and upgrades." },
     { question: "Are there HOA fees in Anthem?",
       answer: "Yes — every Anthem sub-community has HOA dues, and Country Club / Solera also have gate and amenity tiers on top. Dr. Jan will give you the exact monthly amount, what it covers, and any special assessments before you write an offer." },
     { question: "Can I buy in Anthem Country Club without being a golfer?",
       answer: "Yes. Many Country Club buyers want the guard-gated setting, views, and privacy more than golf membership. Dr. Jan will walk you through membership options, dues, and which streets and floor plans fit a non-golf lifestyle." },
     { question: "Who should I call to tour Anthem homes?",
-      answer: "Call or text Dr. Jan Duffy at 702-222-1964. She answers her own phone, pulls live MLS comps for Anthem Henderson, and schedules private showings across Sun City Anthem, Solera, Country Club, and Highlands." },
+      answer: "Call or text Dr. Jan Duffy at 702-500-0453. She answers her own phone, pulls live MLS comps for Anthem Henderson, and schedules private showings across Sun City Anthem, Solera, Country Club, and Highlands." },
   ],
 
   "heritagestoneridgevalue.com": [
     { question: "How do I get an accurate Heritage Stonebridge home valuation?",
-      answer: "Dr. Jan pulls live Heritage Stonebridge comps — every sale in the past 6 months, adjusted for upgrades, floor plan, and lot position. She does this free with no obligation. Call 702-222-1964 for your personalized valuation." },
+      answer: "Dr. Jan pulls live Heritage Stonebridge comps — every sale in the past 6 months, adjusted for upgrades, floor plan, and lot position. She does this free with no obligation. Call 702-500-0453 for your personalized valuation." },
     { question: "What's my Heritage Stonebridge home worth right now?",
       answer: "Heritage Stonebridge values shift with season and interest rates. The most accurate number comes from recent closed sales in your specific floor plan. Dr. Jan has sold more homes in this community than any other agent — she knows what buyers are paying right now." },
     { question: "How is Heritage Stonebridge priced compared to other 55+ Summerlin communities?",
@@ -136,7 +136,7 @@ export const FAQ_DOMAIN_OVERRIDES: Record<string, FAQ[]> = {
     { question: "How long does it take to sell a Heritage Stonebridge home?",
       answer: "Well-priced Heritage Stonebridge homes sell in 14–30 days. The 55+ buyer pool is active and pre-qualified. Overpriced listings can sit for 60+ days. Dr. Jan's pricing strategy achieves list price or above in 94% of her Heritage listings." },
     { question: "Can I sell my Heritage Stonebridge home if it has an HOA lien?",
-      answer: "Yes — liens are typically resolved at closing from sale proceeds. Dr. Jan has handled HOA lien situations before and works with a title team that resolves these efficiently. Call 702-222-1964 for a confidential consultation." },
+      answer: "Yes — liens are typically resolved at closing from sale proceeds. Dr. Jan has handled HOA lien situations before and works with a title team that resolves these efficiently. Call 702-500-0453 for a confidential consultation." },
   ],
 
   "yourdivorcerealtor.com": [
@@ -160,7 +160,7 @@ export const FAQ_DOMAIN_OVERRIDES: Record<string, FAQ[]> = {
     { question: "Is a cash offer always lower than the market price?",
       answer: "Cash offers average 85–92% of market value in exchange for speed and certainty. Dr. Jan also presents a traditional listing option so you can compare the net difference and make the decision that's right for your situation." },
     { question: "What types of homes qualify for a cash offer?",
-      answer: "Any residential property in Las Vegas — regardless of condition, tenant situation, or title issues. Distressed properties, probate homes, inherited properties, and homes needing major repairs all qualify. Call 702-222-1964 for a no-obligation assessment." },
+      answer: "Any residential property in Las Vegas — regardless of condition, tenant situation, or title issues. Distressed properties, probate homes, inherited properties, and homes needing major repairs all qualify. Call 702-500-0453 for a no-obligation assessment." },
     { question: "Are there fees or commissions with a cash sale?",
       answer: "Dr. Jan's cash buyer program charges no seller commission. Closing costs are typically covered by the buyer. Your net proceeds are clearly stated in the offer with no surprises." },
     { question: "Can I sell if I'm behind on payments or facing foreclosure?",

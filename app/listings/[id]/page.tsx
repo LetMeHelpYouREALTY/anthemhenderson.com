@@ -37,11 +37,11 @@ export async function generateMetadata({
   return {
     ...base,
     title: `${property.name} in Anthem Henderson`,
-    description: `${property.name} — ${property.location}. ${property.bedrooms} bed, ${property.bathrooms} bath, ${property.squareFeet.toLocaleString()} sq ft. Listed at ${property.price}. Call Dr. Jan Duffy at 702-222-1964.`,
+    description: `${property.name} — ${property.location}. ${property.bedrooms} bed, ${property.bathrooms} bath, ${property.squareFeet.toLocaleString()} sq ft. Listed at ${property.price}. Call Dr. Jan Duffy at 702-500-0453.`,
     openGraph: {
       ...base.openGraph,
       title: `${property.name} | Anthem Henderson | Homes By Dr. Jan Duffy`,
-      description: `${property.location} · ${property.price} · Call 702-222-1964`,
+      description: `${property.location} · ${property.price} · Call 702-500-0453`,
     },
   };
 }
@@ -147,7 +147,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
                 <p className="text-slate-600 mb-4">Dr. Jan Duffy</p>
                 <div className="space-y-3">
                   <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
-                    <a href="tel:+17022221964">Call (702) 222-1964</a>
+                    <a href="tel:+17025000453">Call (702) 500-0453</a>
                   </Button>
                   <Button asChild variant="outline" className="w-full">
                     <a href="/contact">Send Message</a>

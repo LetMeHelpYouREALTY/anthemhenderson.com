@@ -120,11 +120,11 @@ export default function Home() {
                   View Current Listings
                 </a>
                 <a
-                  href="tel:+17022221964"
+                  href="tel:+17025000453"
                   className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-white/40 bg-black/20 px-4 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/10"
                 >
                   <Phone className="h-4 w-4" aria-hidden="true" />
-                  Call (702) 222-1964
+                  Call (702) 500-0453
                 </a>
               </div>
               <p className="mt-5 inline-flex items-center gap-2 text-xs text-white/70">
@@ -331,14 +331,14 @@ export default function Home() {
                       <div className="mt-2 flex flex-col gap-3 px-4">
                         <div className="h-px w-full bg-border" />
                         <a
-                          href="tel:+17022221964"
+                          href="tel:+17025000453"
                           className="flex items-center gap-2 text-sm text-foreground transition-colors hover:text-primary"
                         >
                           <Phone className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                          (702) 222-1964
+                          (702) 500-0453
                         </a>
                         <a
-                          href="tel:+17022221964"
+                          href="tel:+17025000453"
                           className="mt-1 inline-flex h-9 w-full cursor-pointer items-center justify-center rounded-lg bg-primary px-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                         >
                           Call Dr. Jan
@@ -355,7 +355,7 @@ export default function Home() {
                       </p>
                       <div className="mt-3 flex flex-wrap justify-center gap-2">
                         <a
-                          href="tel:+17022221964"
+                          href="tel:+17025000453"
                           className="rounded-md border border-border px-2.5 py-1 text-xs text-foreground transition-colors hover:border-primary/40"
                         >
                           Call
@@ -417,8 +417,8 @@ export default function Home() {
               <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"> Anthem Henderson | Homes By Dr. Jan Duffy </h2>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 {officeInfo.address.full} · Call{" "}
-                <a href="tel:+17022221964" className="text-primary hover:underline">
-                  (702) 222-1964
+                <a href="tel:+17025000453" className="text-primary hover:underline">
+                  (702) 500-0453
                 </a>{" "}
                 · Mon–Fri 9am–6pm, Sat 10am–4pm, Sun by appointment
               </p>
