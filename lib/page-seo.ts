@@ -76,7 +76,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       ],
       faqs: anthemFaqs,
       directAnswer:
-        "Anthem Henderson is a 4,775-acre master plan in Henderson, NV with 14,000+ homes across Sun City Anthem, Solera, Country Club, Highlands, and more. Call Dr. Jan Duffy at 702-222-1964 for live comps.",
+        "Anthem Henderson is a 4,775-acre master plan in Henderson, NV with 14,000+ homes across Sun City Anthem, Solera, Country Club, Highlands, and more. Call Dr. Jan Duffy at 702-500-0453 for live comps.",
     }
   ),
   "/about": page(
@@ -395,7 +395,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       faqs: anthemFaqs,
       geoFocus: "Sun City Anthem, Henderson NV",
       directAnswer:
-        "Sun City Anthem is a Del Webb 55+ community in Anthem Henderson with 7,000+ homes and multiple recreation centers. Call 702-222-1964 for live listings.",
+        "Sun City Anthem is a Del Webb 55+ community in Anthem Henderson with 7,000+ homes and multiple recreation centers. Call 702-500-0453 for live listings.",
     }
   ),
   "/55-plus-communities/solera-anthem": page(

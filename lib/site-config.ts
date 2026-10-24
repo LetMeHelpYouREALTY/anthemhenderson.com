@@ -19,11 +19,11 @@ export const agentInfo = {
   title: "REALTOR®",
   license: "S.0197614.LLC",
   /** Client-facing CTA line */
-  phone: "(702) 222-1964",
-  phoneFormatted: "(702) 222-1964",
-  phoneTel: "tel:+17022221964",
+  phone: "(702) 500-0453",
+  phoneFormatted: "(702) 500-0453",
+  phoneTel: "tel:+17025000453",
   /** Professional / FUB line — not for public CTAs */
-  phoneProfessional: "(702) 500-1942",
+  phoneProfessional: "(702) 500-0453",
   email: "homes@heyberkshire.com",
   brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
 };
@@ -41,8 +41,8 @@ export const officeInfo = {
     lat: 36.1893,
     lng: -115.2821,
   },
-  phone: "(702) 222-1964",
-  phoneTel: "tel:+17022221964",
+  phone: "(702) 500-0453",
+  phoneTel: "tel:+17025000453",
 };
 
 // Market Statistics (Updated January 2026) — metro context; call for live Anthem comps

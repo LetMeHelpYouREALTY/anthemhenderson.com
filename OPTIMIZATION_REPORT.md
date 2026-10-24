@@ -534,7 +534,7 @@ Create `.lighthouserc.json`:
 - [ ] Test RealScout widget loads
 - [ ] Test Calendly widget loads
 - [ ] Test AI chat widget
-- [ ] Verify phone numbers: (702) 500-1942
+- [ ] Verify phone numbers: (702) 500-0453
 - [ ] Check all images have alt text
 - [ ] Verify metadata on all pages
 - [ ] Test mobile responsiveness

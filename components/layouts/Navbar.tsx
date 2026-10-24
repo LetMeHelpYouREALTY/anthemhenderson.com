@@ -52,11 +52,11 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="tel:+17022221964"
+            href="tel:+17025000453"
             className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-primary px-3 text-[0.8rem] font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             <Phone className="h-3.5 w-3.5" aria-hidden="true" />
-            (702) 222-1964
+            (702) 500-0453
           </a>
         </div>
 
@@ -85,12 +85,12 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="tel:+17022221964"
+              href="tel:+17025000453"
               className="mt-2 inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-3 text-sm font-semibold text-primary-foreground"
               onClick={() => setIsOpen(false)}
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
-              Call (702) 222-1964
+              Call (702) 500-0453
             </a>
           </nav>
         </div>
