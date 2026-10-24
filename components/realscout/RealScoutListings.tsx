@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 
 export default function RealScoutListings() {
   return (
@@ -34,6 +35,7 @@ export default function RealScoutListings() {
             ></realscout-office-listings>`,
           }}
         />
+        <CalendlyAfterListings />
       </div>
     </section>
   );

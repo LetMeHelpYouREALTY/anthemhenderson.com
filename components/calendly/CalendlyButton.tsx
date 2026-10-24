@@ -11,7 +11,7 @@ interface CalendlyButtonProps {
 }
 
 export default function CalendlyButton({
-  url = "https://calendly.com/drjanduffy/appointment",
+  url = "https://calendly.com/drjanduffy/showing?hide_gdpr_banner=1&utm_source=anthemhenderson.com&utm_medium=popup&utm_campaign=site",
   text = "Schedule time with me",
   className = "inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors",
   children,

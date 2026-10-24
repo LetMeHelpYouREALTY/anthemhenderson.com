@@ -1,66 +1,39 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import Script from "next/script";
+import { usePathname } from "next/navigation";
+import { useRef } from "react";
+import { type CalendlyEvent, calendlyEventForPath, calendlyUrl } from "@/lib/calendly";
 
 interface CalendlyWidgetProps {
-  url?: string;
+  /** Booking event; defaults to the event for the current page. */
+  event?: CalendlyEvent;
   minWidth?: string;
   height?: string;
 }
 
-export default function CalendlyWidget({
-  url = "https://calendly.com/drjanduffy/showing",
-  minWidth = "320px",
-  height = "700px",
-}: CalendlyWidgetProps) {
+type CalendlyWindow = Window & {
+  Calendly?: { initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void };
+};
+
+export default function CalendlyWidget({ event, minWidth = "320px", height = "700px" }: CalendlyWidgetProps) {
   const widgetRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname() || "/";
+  const url = calendlyUrl(event ?? calendlyEventForPath(pathname), "inline", pathname);
 
-  useEffect(() => {
-    // Ensure Calendly script is loaded and widget is initialized
-    const initWidget = () => {
-      if (typeof window !== "undefined" && (window as any).Calendly && widgetRef.current) {
-        // Clear any existing content
-        widgetRef.current.innerHTML = "";
-        
-        // Create the widget div
-        const widgetDiv = document.createElement("div");
-        widgetDiv.className = "calendly-inline-widget";
-        widgetDiv.setAttribute("data-url", url);
-        widgetDiv.style.minWidth = minWidth;
-        widgetDiv.style.height = height;
-        widgetDiv.style.width = "100%";
-        
-        widgetRef.current.appendChild(widgetDiv);
-        
-        // Initialize the widget
-        (window as any).Calendly.initInlineWidget({
-          url: url,
-          parentElement: widgetDiv,
-        });
-      }
-    };
-
-    // Try to initialize immediately if Calendly is already loaded
-    if ((window as any).Calendly) {
-      initWidget();
-    } else {
-      // Wait for the script to load
-      const checkCalendly = setInterval(() => {
-        if ((window as any).Calendly) {
-          clearInterval(checkCalendly);
-          initWidget();
-        }
-      }, 100);
-
-      // Clean up interval after 10 seconds
-      setTimeout(() => clearInterval(checkCalendly), 10000);
-    }
-  }, [url, minWidth, height]);
+  // The widget script was never loaded on these pages, so the embed stayed blank.
+  // onReady fires after first load and on every later mount (client navigation).
+  const init = () => {
+    const calendly = (window as CalendlyWindow).Calendly;
+    if (!widgetRef.current || !calendly) return;
+    widgetRef.current.innerHTML = "";
+    calendly.initInlineWidget({ url, parentElement: widgetRef.current });
+  };
 
   return (
-    <div 
-      ref={widgetRef} 
-      style={{ minWidth, height, width: "100%" }}
-    />
+    <>
+      <div ref={widgetRef} style={{ minWidth, height, width: "100%" }} />
+      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" onReady={init} />
+    </>
   );
 }
