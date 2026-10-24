@@ -69,14 +69,13 @@ export default function MarketUpdatePage() {
               Week of January 20, 2026
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Berkshire Hathaway HomeServices Las Vegas Market Update
+              Las Vegas Market Update
             </h1>
             <p className="text-xl text-slate-600">
-              Your weekly insider report on Las Vegas Valley real estate from{" "}
-              <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>
+              Your weekly insider report on Las Vegas Valley real estate from Dr. Jan Duffy
             </p>
             <div className="flex items-center justify-center mt-6 text-slate-500 text-sm">
-              <span>By Dr. Jan Duffy, REALTOR® | BHHS Nevada Properties</span>
+              <span>By Dr. Jan Duffy, REALTOR®</span>
             </div>
           </div>
 
@@ -202,8 +201,7 @@ export default function MarketUpdatePage() {
                 <p>
                   What I'm watching closely: <strong>new listing activity</strong>. If inventory
                   continues declining while sales remain strong, we could see more competitive
-                  conditions by spring. <strong>Berkshire Hathaway HomeServices</strong> buyers
-                  should be prepared to move quickly on desirable properties, while sellers should
+                  conditions by spring. Buyers should be prepared to move quickly on desirable properties, while sellers should
                   consider listing before the traditional spring rush creates more competition."
                 </p>
               </div>
@@ -214,7 +212,7 @@ export default function MarketUpdatePage() {
                 <div>
                   <div className="font-bold text-slate-900">Dr. Jan Duffy</div>
                   <div className="text-slate-500 text-sm">
-                    REALTOR® | Berkshire Hathaway HomeServices Nevada Properties
+                    REALTOR® | In real estate since 1983
                   </div>
                 </div>
               </div>
@@ -260,8 +258,7 @@ export default function MarketUpdatePage() {
                   <li className="flex items-start">
                     <ArrowRight className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Work with an expert.</strong> A Berkshire Hathaway HomeServices agent
-                      can identify properties before they hit the market and negotiate effectively.
+                      <strong>Work with an expert.</strong> An experienced REALTOR® can identify properties before they hit the market and negotiate effectively.
                     </span>
                   </li>
                 </ul>
@@ -300,8 +297,7 @@ export default function MarketUpdatePage() {
                   <li className="flex items-start">
                     <ArrowRight className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Leverage the BHHS brand.</strong> Berkshire Hathaway HomeServices
-                      marketing reaches qualified buyers locally, nationally, and internationally.
+                      <strong>Leverage strong marketing.</strong> Professional marketing reaches qualified buyers locally, nationally, and internationally.
                     </span>
                   </li>
                 </ul>
@@ -388,9 +384,6 @@ export default function MarketUpdatePage() {
                 Get Free Home Valuation
               </Link>
             </div>
-            <p className="mt-6 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </p>
           </section>
 
           {/* Newsletter Signup */}

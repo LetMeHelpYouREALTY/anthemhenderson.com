@@ -152,8 +152,7 @@ export default function Home() {
                   Current Homes for Sale in Anthem Henderson
                 </h2>
                 <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground">
-                  Live MLS inventory from Berkshire Hathaway HomeServices Nevada Properties —
-                  updated throughout the day. Ask Dr. Jan to filter to your Anthem sub-community.
+                  Live MLS inventory — updated throughout the day. Ask Dr. Jan to filter to your Anthem sub-community.
                 </p>
               </div>
               <div
@@ -313,7 +312,7 @@ export default function Home() {
                         <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full border-[3px] border-primary shadow-sm">
                           <Image
                             src="/realty/dr-jan-duffy.jpg"
-                            alt="Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties"
+                            alt="Dr. Jan Duffy, REALTOR®"
                             fill
                             sizes="112px"
                             className="object-cover"
@@ -322,7 +321,7 @@ export default function Home() {
                         <div className="mt-3 text-center">
                           <p className="text-base font-semibold text-foreground">Dr. Jan Duffy</p>
                           <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
-                            REALTOR® | BHHS Nevada Properties
+                            Top 1% Las Vegas REALTOR®
                           </p>
                           <p className="mt-1 text-xs text-muted-foreground">
                             Anthem Henderson specialist
@@ -350,13 +349,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="mt-4 rounded-lg border border-border bg-card p-4 text-center">
-                      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                        Licensed in Nevada
-                      </p>
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        NV Lic. #S.0197614.LLC · Brokered by Berkshire Hathaway HomeServices Nevada
-                        Properties
-                      </p>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground"> Licensed in Nevada </p> <p className="mt-1 text-xs text-muted-foreground"> In real estate since 1983 </p>
                       <p className="mt-3 text-xs text-muted-foreground">
                         {officeInfo.address.full}
                       </p>
@@ -421,9 +414,7 @@ export default function Home() {
               <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 Visit / Contact
               </p>
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Berkshire Hathaway HomeServices Nevada Properties
-              </h2>
+              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"> Anthem Henderson | Homes By Dr. Jan Duffy </h2>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 {officeInfo.address.full} · Call{" "}
                 <a href="tel:+17022221964" className="text-primary hover:underline">

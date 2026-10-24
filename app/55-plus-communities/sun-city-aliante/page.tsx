@@ -128,9 +128,7 @@ export default function SunCityAliantePage() {
                 community's many clubs and activities.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
-                helps buyers understand why Sun City Aliante represents
-                exceptional value. Dr. Jan Duffy guides clients through the
+                Dr. Jan Duffy helps buyers understand why Sun City Aliante represents exceptional value. She guides clients through the
                 community's various floor plans and helps identify homes that
                 offer the best combination of features, location, and price.
               </p>
@@ -370,13 +368,12 @@ export default function SunCityAliantePage() {
                 "Sun City Aliante is my top recommendation for buyers who want the
                 full Sun City lifestyle at the best possible price. The amenities
                 are excellent, the community is active and welcoming, and you
-                simply can't beat the value. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help
+                simply can't beat the value. As a REALTOR®, I help
                 buyers compare all the Sun City options and understand why Aliante
                 often makes the most financial sense."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, REALTOR®
               </cite>
             </div>
           </section>

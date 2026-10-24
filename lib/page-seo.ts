@@ -82,7 +82,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/about": page(
     "/about",
     "About Dr. Jan Duffy — Anthem Henderson REALTOR®",
-    `Meet Dr. Jan Duffy, BHHS Nevada Properties — Anthem Henderson specialist for buyers and sellers. License ${agentInfo.license}. Call ${PHONE}.`,
+    `Meet Dr. Jan Duffy, REALTOR® — Anthem Henderson specialist for buyers and sellers, in real estate since 1983. Call ${PHONE}.`,
     crumbs({ name: "About", url: "/about" }),
     { faqs: anthemFaqs.slice(0, 3) }
   ),
@@ -244,7 +244,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/market-update": page(
     "/market-update",
     "Anthem Henderson Market Update",
-    `Current Anthem Henderson market update from Dr. Jan Duffy, BHHS Nevada Properties.`,
+    `Current Anthem Henderson market update from Dr. Jan Duffy, REALTOR®.`,
     crumbs({ name: "Market Update", url: "/market-update" })
   ),
   "/market-insights": page(
@@ -262,14 +262,12 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/google-business": page(
     "/google-business",
     "Google Business Profile — Dr. Jan Duffy",
-    `GBP details for Dr. Jan Duffy, BHHS Nevada Properties — Anthem Henderson real estate. Call ${PHONE}.`,
+    `GBP details for Dr. Jan Duffy, REALTOR® — Anthem Henderson real estate. Call ${PHONE}.`,
     crumbs({ name: "Google Business", url: "/google-business" })
   ),
   "/why-berkshire-hathaway": page(
     "/why-berkshire-hathaway",
-    "Why Berkshire Hathaway HomeServices — Anthem",
-    `Why work with a BHHS Nevada Properties agent for Anthem Henderson. ${BRAND}.`,
-    crumbs({ name: "Why BHHS", url: "/why-berkshire-hathaway" })
+    "Why Work With Dr. Jan Duffy — Anthem", `Why work with Dr. Jan Duffy, a Top 1% Las Vegas REALTOR® in real estate since 1983, for Anthem Henderson. ${BRAND}.`, crumbs({ name: "Why Dr. Jan", url: "/why-berkshire-hathaway" })
   ),
   "/security-policy": page(
     "/security-policy",
@@ -335,7 +333,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/neighborhoods/north-las-vegas": page(
     "/neighborhoods/north-las-vegas",
     "North Las Vegas Homes for Sale",
-    `North Las Vegas homes for sale with Dr. Jan Duffy, BHHS Nevada Properties. Call ${PHONE}.`,
+    `North Las Vegas homes for sale with Dr. Jan Duffy, REALTOR®. Call ${PHONE}.`,
     crumbs(
       { name: "Neighborhoods", url: "/neighborhoods" },
       { name: "North Las Vegas", url: "/neighborhoods/north-las-vegas" }

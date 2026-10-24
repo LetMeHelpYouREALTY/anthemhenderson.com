@@ -79,7 +79,7 @@ export default function HeroSection() {
             <span>Properties Sold</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-semibold">Since 2008</span>
+            <span className="font-semibold">Since 1983</span>
             <span>Serving Las Vegas</span>
           </div>
           <div className="flex items-center gap-2">

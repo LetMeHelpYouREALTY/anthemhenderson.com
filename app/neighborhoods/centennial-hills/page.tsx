@@ -70,14 +70,13 @@ export default function CentennialHillsPage() {
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Dr. Jan Duffy, REALTOR®
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Centennial Hills
+              Centennial Hills Real Estate
             </h1>
             <p className="text-xl text-slate-600">
-              Family-friendly northwest Las Vegas living. Find your Centennial Hills home with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              Family-friendly northwest Las Vegas living. Find your Centennial Hills home with Dr. Jan Duffy.
             </p>
           </div>
 
@@ -117,7 +116,7 @@ export default function CentennialHillsPage() {
                 living. While newer communities like Skye Canyon attract attention, Centennial Hills
                 offers something they can't: mature neighborhoods with proven schools, established
                 landscaping, and a genuine sense of community built over nearly two decades.
-                <strong> Berkshire Hathaway HomeServices</strong> helps families discover why
+                Dr. Jan Duffy helps families discover why
                 Centennial Hills remains one of the valley's most desirable addresses.
               </p>
               <p>
@@ -128,11 +127,10 @@ export default function CentennialHillsPage() {
                 Hills' urban conveniences would suggest.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has represented
-                Centennial Hills families since the community's earliest phases. Dr. Jan Duffy knows
+                Dr. Jan Duffy knows
                 which streets offer the best mountain views, which school zones are most sought-after,
                 and which HOAs maintain their communities to the highest standards. This deep local
-                knowledge, combined with the BHHS commitment to client service, ensures Centennial
+                knowledge, combined with a commitment to client service, ensures Centennial
                 Hills buyers and sellers receive exceptional representation.
               </p>
 
@@ -281,8 +279,7 @@ export default function CentennialHillsPage() {
                 smaller homes to over $900,000 for larger properties with premium lots and views.
               </p>
               <p>
-                Working with <strong>Berkshire Hathaway HomeServices</strong> in Centennial Hills means
-                partnering with agents who understand the community's evolution and can identify
+                Working with Dr. Jan Duffy in Centennial Hills means partnering with a REALTOR® who understand the community's evolution and can identify
                 properties that represent genuine value. Dr. Jan Duffy helps buyers look beyond
                 surface features to evaluate factors that matter long-term: construction quality,
                 lot positioning, HOA health, and school quality. That expertise translates into
@@ -297,12 +294,12 @@ export default function CentennialHillsPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Centennial Hills offers something newer communities are still building: a genuine
                 sense of community. The schools have track records, the neighbors have history, and
-                the landscaping is mature. As a Berkshire Hathaway HomeServices agent, I help families
+                the landscaping is mature. As a REALTOR®, I help families
                 see beyond the shiny new construction to communities that have proven their value
                 over time."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, REALTOR®
               </cite>
             </div>
           </section>
@@ -362,7 +359,7 @@ export default function CentennialHillsPage() {
               Find Your Centennial Hills Home
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Centennial Hills expert,
+              Contact Dr. Jan Duffy, your Centennial Hills expert,
               for guidance in this established family community.
             </p>
             <a
@@ -372,9 +369,6 @@ export default function CentennialHillsPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </p>
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>

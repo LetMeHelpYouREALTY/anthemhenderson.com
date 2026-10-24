@@ -671,15 +671,13 @@ export default function FiftyFiveCommunitiesPage() {
                 "Buying in a 55+ community involves considerations beyond a
                 typical purchase. You need to understand HOA rules, age
                 verification processes, and how the community fits your
-                lifestyle. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent
-                specializing in active adult communities, I guide clients through
+                lifestyle. As a REALTOR® specializing in active adult communities, I guide clients through
                 every step—from touring amenities to reviewing HOA documents. Many
                 clients are relocating from California, and they rely on my local
                 knowledge to make confident decisions."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, REALTOR®
               </cite>
             </div>
           </section>
@@ -755,7 +753,7 @@ export default function FiftyFiveCommunitiesPage() {
             </div>
           </section>
 
-          {/* Why BHHS */}
+          {/* Why Dr. Jan Duffy */}
           <section className="mb-16 max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Why Choose Dr. Jan Duffy for 55+ Communities?
@@ -785,8 +783,7 @@ export default function FiftyFiveCommunitiesPage() {
                     Relocation Support
                   </h3>
                   <p className="text-slate-600 text-sm">
-                    Many 55+ buyers relocate from out of state. Our national BHHS
-                    network provides referrals, and Dr. Jan offers virtual tours
+                    Many 55+ buyers relocate from out of state. Dr. Jan offers referrals, virtual tours
                     and detailed community information.
                   </p>
                 </div>
@@ -796,11 +793,9 @@ export default function FiftyFiveCommunitiesPage() {
                   <Shield className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-1">Trusted Brand</h3>
+                  <h3 className="font-bold text-slate-900 mb-1">Trusted Guidance</h3>
                   <p className="text-slate-600 text-sm">
-                    The Berkshire Hathaway name represents trust and
-                    integrity—values that matter when making one of life's biggest
-                    decisions.
+                    Dr. Jan Duffy, in real estate since 1983, brings trust and integrity—values that matter when making one of life's biggest decisions.
                   </p>
                 </div>
               </div>
@@ -852,9 +847,6 @@ export default function FiftyFiveCommunitiesPage() {
               <span role="img" aria-label="sunshine">
                 ☀️
               </span>
-            </p>
-            <p className="mt-4 text-blue-300 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>
         </div>

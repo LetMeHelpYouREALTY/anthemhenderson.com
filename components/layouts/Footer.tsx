@@ -14,7 +14,7 @@ export default function Footer() {
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-[3px] border-primary">
                 <Image
                   src="/realty/dr-jan-duffy.jpg"
-                  alt="Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties"
+                  alt="Dr. Jan Duffy, REALTOR®"
                   fill
                   sizes="80px"
                   className="object-cover"
@@ -60,9 +60,7 @@ export default function Footer() {
                 Anthem Henderson | Homes By Dr. Jan Duffy
               </p>
               <p className="text-xs text-muted-foreground">
-                © {currentYear} Dr. Jan Duffy · NV Lic. #S.0197614.LLC · Berkshire Hathaway
-                HomeServices Nevada Properties · 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV
-                89134
+                © {currentYear} Dr. Jan Duffy · Berkshire Hathaway HomeServices Nevada Properties since September 2008 · License S.0197614.LLC · 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134
               </p>
             </div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground">

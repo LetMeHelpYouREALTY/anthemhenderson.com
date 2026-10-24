@@ -70,14 +70,13 @@ export default function TheRidgesPage() {
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Dr. Jan Duffy, REALTOR®
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices The Ridges
+              The Ridges Real Estate
             </h1>
             <p className="text-xl text-slate-600">
-              Las Vegas's most prestigious address. Experience The Ridges luxury with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              Las Vegas's most prestigious address. Experience The Ridges luxury with Dr. Jan Duffy.
             </p>
           </div>
 
@@ -117,8 +116,7 @@ export default function TheRidgesPage() {
                 within Summerlin along the foothills of Red Rock Canyon, this ultra-exclusive guard-gated
                 community offers estate-quality homes with panoramic views of the Las Vegas Strip, the
                 surrounding mountains, and the pristine desert landscape. When the most discerning buyers
-                search for Las Vegas luxury, they turn to <strong>Berkshire Hathaway HomeServices</strong>—the
-                brand that matches The Ridges' standard of excellence.
+                search for Las Vegas luxury, they turn to Dr. Jan Duffy for service that matches The Ridges' standard of excellence.
               </p>
               <p>
                 The Ridges comprises six distinctive villages—Bear's Best, Falcon Ridge, Azure, Talon Ridge,
@@ -129,11 +127,9 @@ export default function TheRidgesPage() {
                 aesthetic throughout.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has represented buyers
-                and sellers in The Ridges since the community's inception. Dr. Jan Duffy understands that
+                Dr. Jan Duffy understands that
                 luxury transactions require more than market knowledge—they demand discretion, sophisticated
-                marketing, and access to qualified buyers worldwide. The BHHS global network connects The
-                Ridges properties with high-net-worth individuals actively seeking premier real estate
+                marketing, and access to qualified buyers worldwide. Her network connects The Ridges properties with high-net-worth individuals actively seeking premier real estate
                 investments in Las Vegas.
               </p>
 
@@ -279,12 +275,10 @@ export default function TheRidgesPage() {
                 million for the most spectacular custom estates.
               </p>
               <p>
-                Working with <strong>Berkshire Hathaway HomeServices</strong> in The Ridges means working
-                with agents who understand that luxury isn't just about price—it's about lifestyle,
+                Working with Dr. Jan Duffy in The Ridges means working with a REALTOR® who understands that luxury isn't just about price—it's about lifestyle,
                 privacy, and attention to detail. Dr. Jan Duffy provides the white-glove service that
                 Ridges buyers and sellers expect, from confidential off-market transactions to coordination
-                with architects, designers, and property managers. When the stakes are measured in millions,
-                the Berkshire Hathaway name provides the trust and expertise that matters.
+                with architects, designers, and property managers. When the stakes are measured in millions, trust and expertise matter.
               </p>
             </div>
           </section>
@@ -293,13 +287,12 @@ export default function TheRidgesPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "The Ridges attracts clients who expect the very best—and they recognize Berkshire Hathaway
-                HomeServices as a brand that matches their standards. In luxury real estate, discretion and
+                "The Ridges attracts clients who expect the very best. In luxury real estate, discretion and
                 trust are everything. My clients know their privacy is protected and their interests come first.
-                That's the BHHS difference in high-end transactions."
+                That's the difference in high-end transactions."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, REALTOR®
               </cite>
             </div>
           </section>
@@ -342,11 +335,10 @@ export default function TheRidgesPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Why use Berkshire Hathaway HomeServices for luxury home purchases?
+                  Why use an experienced REALTOR® for luxury home purchases?
                 </h3>
                 <p className="text-slate-600">
-                  BHHS represents a brand synonymous with trust and discretion—essential in luxury
-                  transactions. Our agents like Dr. Jan Duffy have access to off-market listings, understand
+                  Trust and discretion are essential in luxury transactions. Dr. Jan Duffy has access to off-market listings, understand
                   high-end buyer requirements, and provide the confidentiality luxury clients expect.
                 </p>
               </div>
@@ -369,9 +361,6 @@ export default function TheRidgesPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </p>
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>

@@ -204,8 +204,7 @@ export default function MoveUpSellerPage() {
               <p>
                 The biggest concern move-up buyers have is timing. What happens if you sell before
                 finding your next home? What if you find your dream home but can't sell in time?
-                <strong> Berkshire Hathaway HomeServices</strong> agents like Dr. Jan Duffy have
-                strategies for every scenario, ensuring you never end up homeless or paying two
+                Dr. Jan Duffy has strategies for every scenario, ensuring you never end up homeless or paying two
                 mortgages unnecessarily.
               </p>
             </div>
@@ -316,13 +315,11 @@ export default function MoveUpSellerPage() {
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Move-up transactions are like a chess game—every move matters. I coordinate both
-                sides so you don't end up homeless or paying two mortgages. With{" "}
-                <strong>Berkshire Hathaway HomeServices</strong>, I have the resources to make
-                complex transactions smooth. That's why clients trust me with their biggest
+                sides so you don't end up homeless or paying two mortgages. With a career in real estate since 1983, I know how to make complex transactions smooth. That's why clients trust me with their biggest
                 financial moves."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, REALTOR®
               </cite>
             </div>
           </section>

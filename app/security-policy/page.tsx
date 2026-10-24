@@ -1,9 +1,11 @@
 import { createPageMetadata } from "@/lib/page-seo";
+import Footer from "@/components/layouts/Footer";
 
 export const metadata = createPageMetadata("/security-policy");
 
 export default function SecurityPolicyPage() {
   return (
+    <>
     <div className="min-h-screen bg-white py-12">
       <div className="container mx-auto max-w-4xl px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
@@ -253,16 +255,18 @@ export default function SecurityPolicyPage() {
           </section>
 
           {/* Last Updated */}
-          <footer className="border-t pt-6 mt-12">
+          <div className="border-t pt-6 mt-12">
             <p className="text-sm text-gray-500">
               Last updated: February 14, 2026
             </p>
             <p className="text-sm text-gray-500">
               This policy is reviewed and updated regularly.
             </p>
-          </footer>
+          </div>
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
