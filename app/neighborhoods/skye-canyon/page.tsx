@@ -334,7 +334,7 @@ export default function SkyeCanyonPage() {
                 </h3>
                 <p className="text-slate-600">
                   Yes, Skye Canyon is designed for families with new schools, extensive children's
-                  amenities, community events, and safe neighborhoods. The community hosts master-planned
+                  amenities, community events, and safe neighborhoods. The community hosts community
                   events throughout the year at Skye Center.
                 </p>
               </div>
