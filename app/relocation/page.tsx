@@ -164,7 +164,7 @@ export default function RelocationPage() {
                 make Las Vegas feel like home before you even arrive."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, REALTOR® | In Real Estate Since 1983
+                — Dr. Jan Duffy, REALTOR® | Licensed Since 2008 · 35 Years in Las Vegas
               </cite>
             </div>
           </section>

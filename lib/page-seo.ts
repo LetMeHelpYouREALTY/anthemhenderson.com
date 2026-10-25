@@ -82,7 +82,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/about": page(
     "/about",
     "About Dr. Jan Duffy — Anthem Henderson REALTOR®",
-    `Meet Dr. Jan Duffy, REALTOR® — Anthem Henderson specialist for buyers and sellers, in real estate since 1983. Call ${PHONE}.`,
+    `Meet Dr. Jan Duffy, REALTOR® — Anthem Henderson specialist for buyers and sellers, licensed since 2008 · 35 years in Las Vegas. Call ${PHONE}.`,
     crumbs({ name: "About", url: "/about" }),
     { faqs: anthemFaqs.slice(0, 3) }
   ),
@@ -267,7 +267,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   ),
   "/why-berkshire-hathaway": page(
     "/why-berkshire-hathaway",
-    "Why Work With Dr. Jan Duffy — Anthem", `Why work with Dr. Jan Duffy, a Top 1% Las Vegas REALTOR® in real estate since 1983, for Anthem Henderson. ${BRAND}.`, crumbs({ name: "Why Dr. Jan", url: "/why-berkshire-hathaway" })
+    "Why Work With Dr. Jan Duffy — Anthem", `Why work with Dr. Jan Duffy, a Las Vegas REALTOR® licensed since 2008 · 35 years in Las Vegas, for Anthem Henderson. ${BRAND}.`, crumbs({ name: "Why Dr. Jan", url: "/why-berkshire-hathaway" })
   ),
   "/security-policy": page(
     "/security-policy",

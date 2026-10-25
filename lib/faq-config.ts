@@ -70,7 +70,7 @@ export const FAQ_BY_PAGE_TYPE: Record<string, FAQ[]> = {
     { question: "Are there homes available under $400K in Las Vegas?",
       answer: "Yes — the North Las Vegas and East Las Vegas submarkets have solid inventory under $400K. Condos and townhomes in Henderson and Summerlin also hit this price point. Dr. Jan will show you exactly what's available in your budget right now — call 702-500-0453." },
     { question: "How do I make a competitive offer in Las Vegas?",
-      answer: "Strong pre-approval, clean contract terms, flexible close date, and realistic pricing. Dr. Jan's offer strategy — refined over 500+ transactions — consistently wins in competitive situations. She'll advise on escalation clauses, appraisal gaps, and seller concessions specific to each listing." },
+      answer: "Strong pre-approval, clean contract terms, flexible close date, and realistic pricing. Dr. Jan's offer strategy — refined 500+ team sales — consistently wins in competitive situations. She'll advise on escalation clauses, appraisal gaps, and seller concessions specific to each listing." },
   ],
 
   lifestyle: [

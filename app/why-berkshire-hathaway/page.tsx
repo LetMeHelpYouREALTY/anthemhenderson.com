@@ -36,13 +36,13 @@ export default function WhyBerkshireHathawayPage() {
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Top 1% Las Vegas REALTOR®
+              Las Vegas REALTOR®
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Why Work With Dr. Jan Duffy?
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              In real estate since 1983, Dr. Jan Duffy brings trust, ethical standards, and local
+              Licensed since 2008 · 35 years in Las Vegas, Dr. Jan Duffy brings trust, ethical standards, and local
               knowledge to every Anthem and Henderson move.
             </p>
           </div>
@@ -59,8 +59,7 @@ export default function WhyBerkshireHathawayPage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Unmatched Trust</h3>
                 <p className="text-slate-600">
-                  Integrity and reliability in every transaction, built over a career in real
-                  estate since 1983.
+                  Integrity and reliability in every transaction, built over a career licensed since 2008 · 35 years in Las Vegas.
                 </p>
               </div>
 
@@ -101,9 +100,9 @@ export default function WhyBerkshireHathawayPage() {
                 <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
                   <TrendingUp className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Top 1% Las Vegas REALTOR®</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Las Vegas REALTOR®</h3>
                 <p className="text-slate-600">
-                  Ranked among the top 1% of Las Vegas REALTORS®, with $127M+ in closed
+                  With $127M+ in closed
                   transactions.
                 </p>
               </div>
@@ -114,7 +113,7 @@ export default function WhyBerkshireHathawayPage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Proven Results</h3>
                 <p className="text-slate-600">
-                  500+ transactions helping families achieve their real estate goals in Southern
+                  500+ team sales helping families achieve their real estate goals in Southern
                   Nevada.
                 </p>
               </div>
@@ -130,14 +129,14 @@ export default function WhyBerkshireHathawayPage() {
                 </h2>
                 <p className="text-lg text-slate-700 mb-6">
                   Dr. Jan Duffy serves Las Vegas, Henderson, Summerlin, and all of Southern
-                  Nevada. In real estate since 1983 with $127M+ in closed transactions, she
+                  Nevada. Licensed since 2008 · 35 years in Las Vegas with $127M+ in Dr. Duffy Group career sales, she
                   brings hometown expertise to every move.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "In real estate since 1983",
-                    "$127M+ in closed transactions",
-                    "500+ satisfied clients",
+                    "Licensed since 2008 · 35 years in Las Vegas",
+                    "$127M+ in Dr. Duffy Group career sales",
+                    "500+ team sales",
                     "Specializing in luxury, investment, and relocation",
                     "Deep knowledge of every Las Vegas neighborhood",
                   ].map((item) => (
@@ -157,7 +156,7 @@ export default function WhyBerkshireHathawayPage() {
               <div className="bg-slate-100 rounded-lg p-8">
                 <blockquote className="text-lg text-slate-700 italic mb-4">
                   "When clients ask why they should choose me, I tell them: you get a REALTOR®
-                  who has been in real estate since 1983, world-class marketing, and someone who
+                  who has been licensed since 2008 (35 years in Las Vegas), world-class marketing, and someone who
                   puts your interests first."
                 </blockquote>
                 <cite className="text-slate-900 font-semibold">
@@ -176,7 +175,7 @@ export default function WhyBerkshireHathawayPage() {
               {[
                 {
                   q: "How long has Dr. Jan Duffy been in real estate?",
-                  a: "Dr. Jan Duffy has been in real estate since 1983 and is a Top 1% Las Vegas REALTOR®, with 500+ transactions and $127M+ in closed volume.",
+                  a: "Dr. Jan Duffy has been licensed since 2008 (35 years in Las Vegas) and is a Las Vegas REALTOR®, with 500+ team sales and $127M+ in Dr. Duffy Group career sales.",
                 },
                 {
                   q: "Does working with Dr. Jan cost more?",
@@ -201,7 +200,7 @@ export default function WhyBerkshireHathawayPage() {
               Experience the Difference
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              Ready to work with a Top 1% Las Vegas REALTOR®? Contact Dr. Jan Duffy today.
+              Ready to work with a Las Vegas REALTOR®? Contact Dr. Jan Duffy today.
             </p>
             <a
               href="tel:+17025000453"
