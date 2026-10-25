@@ -128,7 +128,7 @@ export default function SouthernHighlandsPage() {
               <p>
                 Dr. Jan Duffy understands the
                 community's various sections—from the guard-gated luxury estates surrounding the golf
-                course to the family-friendly neighborhoods in the community's newer phases. Whether
+                course to the park-rich neighborhoods in the community's newer phases. Whether
                 you're seeking a golf course lot with Strip views or a spacious family home with top-rated schools, she has the local expertise to guide your search.
               </p>
 
