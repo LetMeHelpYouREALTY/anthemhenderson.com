@@ -795,7 +795,7 @@ export default function FiftyFiveCommunitiesPage() {
                 <div>
                   <h3 className="font-bold text-slate-900 mb-1">Trusted Guidance</h3>
                   <p className="text-slate-600 text-sm">
-                    Dr. Jan Duffy, in real estate since 1983, brings trust and integrity—values that matter when making one of life's biggest decisions.
+                    Dr. Jan Duffy, licensed since 2008 · 35 years in Las Vegas, brings trust and integrity—values that matter when making one of life's biggest decisions.
                   </p>
                 </div>
               </div>

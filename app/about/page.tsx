@@ -119,7 +119,7 @@ export default function AboutPage() {
               Meet Dr. Jan Duffy, Your Las Vegas REALTOR®
             </h1>
             <p className="text-xl text-slate-600">
-              Dr. Jan Duffy has been in real estate since 1983 and is a Top 1% Las Vegas REALTOR®. Whether you're buying, selling, investing, or 
+              Dr. Jan Duffy has been licensed since 2008 (35 years in Las Vegas) and is a Las Vegas REALTOR®. Whether you're buying, selling, investing, or 
               relocating, you'll receive expert guidance with integrity and professionalism.
             </p>
           </div>
@@ -130,15 +130,15 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Dr. Jan Duffy</h2>
                 <p className="text-lg text-blue-600 mb-6">
-                  Top 1% Las Vegas REALTOR®
+                  Las Vegas REALTOR®
                 </p>
 
                 <div className="prose prose-lg text-slate-700 mb-8 space-y-4">
                   <p>
-                    When you choose to work with me, you're choosing trust, integrity, and excellence. I've been in real estate since 1983, and I bring world-class resources and local expertise to every client I serve.
+                    When you choose to work with me, you're choosing trust, integrity, and excellence. I've been licensed since 2008 (35 years in Las Vegas), and I bring world-class resources and local expertise to every client I serve.
                   </p>
                   <p>
-                    I've closed $127M+ in transactions and helped hundreds of families find their perfect home in Las Vegas, Henderson,
+                    I've led the Dr. Duffy Group to $127M+ in career sales and helped hundreds of clients find their perfect home in Las Vegas, Henderson,
                     Summerlin, and throughout Southern Nevada. My expertise spans luxury properties,
                     new construction, investment real estate, 55+ active adult communities, and 
                     relocations—particularly for California families seeking Nevada's tax advantages.
@@ -216,7 +216,7 @@ export default function AboutPage() {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-1">Since 1983</div>
+                    <div className="text-3xl font-bold text-blue-600 mb-1">Licensed Since 2008</div>
                     <div className="text-sm text-slate-600">In Real Estate</div>
                   </div>
                   <div className="bg-blue-50 rounded-lg p-6 text-center">

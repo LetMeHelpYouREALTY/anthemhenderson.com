@@ -212,7 +212,7 @@ export default function MarketUpdatePage() {
                 <div>
                   <div className="font-bold text-slate-900">Dr. Jan Duffy</div>
                   <div className="text-slate-500 text-sm">
-                    REALTOR® | In real estate since 1983
+                    REALTOR® | Licensed since 2008 · 35 years in Las Vegas
                   </div>
                 </div>
               </div>

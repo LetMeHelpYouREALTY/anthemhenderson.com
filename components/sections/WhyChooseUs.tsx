@@ -4,7 +4,7 @@ const features = [
   {
     icon: Shield,
     title: "Trusted Expertise",
-    description: "In real estate since 1983 with proven results across Las Vegas and Henderson.",
+    description: "Licensed since 2008 · 35 years in Las Vegas with proven results across Las Vegas and Henderson.",
   },
   {
     icon: TrendingUp,
@@ -19,7 +19,7 @@ const features = [
   {
     icon: Award,
     title: "Proven Results",
-    description: "500+ successful transactions and satisfied clients.",
+    description: "500+ team sales and satisfied clients.",
   },
   {
     icon: Clock,

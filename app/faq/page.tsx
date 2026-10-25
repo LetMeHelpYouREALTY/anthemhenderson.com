@@ -25,7 +25,7 @@ const faqCategories = [
     title: "About Working With Dr. Jan Duffy",
     faqs: [
       {
-        q: "Why should I choose Dr. Jan Duffy?", a: "Dr. Jan Duffy is a Top 1% Las Vegas REALTOR® who has been in real estate since 1983, with 500+ transactions and $127M+ in closed volume. When you're making the biggest purchase of your life, that trust matters.",
+        q: "Why should I choose Dr. Jan Duffy?", a: "Dr. Jan Duffy is a Las Vegas REALTOR® who has been licensed since 2008 (35 years in Las Vegas), with 500+ team sales and $127M+ in Dr. Duffy Group career sales. When you're making the biggest purchase of your life, that trust matters.",
       },
       
       {
@@ -65,7 +65,7 @@ const faqCategories = [
     faqs: [
       {
         q: "What is my home worth in today's market?",
-        a: "Home values depend on location, condition, size, and recent comparable sales. Dr. Jan provides free, comprehensive home valuations using current MLS data and her expertise in real estate since 1983.",
+        a: "Home values depend on location, condition, size, and recent comparable sales. Dr. Jan provides free, comprehensive home valuations using current MLS data and her expertise (licensed since 2008, 35 years in Las Vegas).",
       },
       {
         q: "How long will it take to sell my home?",
@@ -122,7 +122,7 @@ const faqCategories = [
     faqs: [
       {
         q: "What is Dr. Jan Duffy's experience?",
-        a: "Dr. Jan has been in real estate since 1983, with $127M+ in closed transactions and 500+ satisfied clients. She specializes in residential, luxury, investment, and relocation services throughout Southern Nevada.",
+        a: "Dr. Jan has been licensed since 2008 (35 years in Las Vegas), with $127M+ in Dr. Duffy Group career sales and 500+ team sales. She specializes in residential, luxury, investment, and relocation services throughout Southern Nevada.",
       },
       {
         q: "How do I contact Dr. Jan Duffy?",
