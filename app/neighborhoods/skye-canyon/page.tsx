@@ -29,10 +29,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Is Skye Canyon good for families?",
+      name: "What amenities and schools serve Skye Canyon?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and safe neighborhoods. The community hosts community events throughout the year at Skye Center.",
+        text: "Skye Canyon has parks, trails, and Skye Center, which hosts community events throughout the year. Nearby schools include Arbor View High School, Escobedo and Cadwallader middle schools, and the Somerset Academy Skye Canyon charter campus. Confirm zoning for any address with the CCSD Zoning Search.",
       },
     },
     {
@@ -330,12 +330,12 @@ export default function SkyeCanyonPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Skye Canyon good for families?
+                  What amenities and schools serve Skye Canyon?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Skye Canyon is designed for families with new schools, extensive children's
-                  amenities, community events, and safe neighborhoods. The community hosts community
-                  events throughout the year at Skye Center.
+                  Skye Canyon has parks, trails, and Skye Center, which hosts community events throughout the year.
+                  Nearby schools include Arbor View High School, Escobedo and Cadwallader middle schools, and the
+                  Somerset Academy Skye Canyon charter campus. Confirm zoning for any address with the CCSD Zoning Search.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
