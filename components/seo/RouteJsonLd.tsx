@@ -17,7 +17,7 @@ export default async function RouteJsonLd() {
   const sitewide = combineSchemas(
     generateRealEstateAgentSchema(),
     generateWebSiteSchema(),
-    generateOrganizationSchema()
+    generateOrganizationSchema(),
   );
   const pageSchemas = buildPageSchemas(pathname);
 
