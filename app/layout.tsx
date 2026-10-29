@@ -9,7 +9,7 @@ import { createPageMetadata, normalizePath } from "@/lib/page-seo";
 import { siteConfig } from "@/lib/site-config";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const pathname = normalizePath(headers().get("x-pathname") || "/");
+  const pathname = normalizePath((await headers()).get("x-pathname") || "/");
   const pageMeta = createPageMetadata(pathname);
   const pageTitle =
     typeof pageMeta.title === "string"
@@ -34,7 +34,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${GeistSans.className} dark`}>
       <body className="antialiased">
