@@ -12,12 +12,12 @@ import { buildPageSchemas, normalizePath } from "@/lib/page-seo";
  * Injects sitewide LocalBusiness/WebSite schema plus per-route
  * WebPage + Breadcrumb + FAQ JSON-LD on every page.
  */
-export default function RouteJsonLd() {
-  const pathname = normalizePath(headers().get("x-pathname") || "/");
+export default async function RouteJsonLd() {
+  const pathname = normalizePath((await headers()).get("x-pathname") || "/");
   const sitewide = combineSchemas(
     generateRealEstateAgentSchema(),
     generateWebSiteSchema(),
-    generateOrganizationSchema()
+    generateOrganizationSchema(),
   );
   const pageSchemas = buildPageSchemas(pathname);
 
