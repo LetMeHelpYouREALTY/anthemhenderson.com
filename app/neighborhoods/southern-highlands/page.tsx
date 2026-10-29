@@ -24,7 +24,7 @@ const faqSchema = {
       name: "Does Southern Highlands have guard-gated sections?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Southern Highlands features multiple guard-gated luxury sections including Southern Highlands Golf Club estates and exclusive enclaves with 24/7 security. Non-gated sections also offer excellent value with community amenities.",
+        text: "Yes, Southern Highlands features multiple guard-gated luxury sections including Southern Highlands Golf Club estates and luxury enclaves with 24/7 security. Non-gated sections also offer excellent value with community amenities.",
       },
     },
     {
@@ -128,8 +128,8 @@ export default function SouthernHighlandsPage() {
               <p>
                 Dr. Jan Duffy understands the
                 community's various sections—from the guard-gated luxury estates surrounding the golf
-                course to the family-friendly neighborhoods in the community's newer phases. Whether
-                you're seeking a golf course lot with Strip views or a spacious family home with top-rated schools, she has the local expertise to guide your search.
+                course to the neighborhoods in the community's newer phases. Whether
+                you're seeking a golf course lot with Strip views or a spacious family home with nearby public schools, she has the local expertise to guide your search.
               </p>
 
               {/* Community Highlights */}
@@ -291,7 +291,7 @@ export default function SouthernHighlandsPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Southern Highlands delivers luxury living at prices that often surprise buyers—especially
                 those relocating from California. You get championship golf, guard-gated security, mountain
-                views, and excellent schools, all just 15 minutes from the Strip. As a REALTOR®, I help clients see beyond the golf course to the community's full potential."
+                views, and nearby public schools, all just 15 minutes from the Strip. As a REALTOR®, I help clients see beyond the golf course to the community's full potential."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, REALTOR®
@@ -321,7 +321,7 @@ export default function SouthernHighlandsPage() {
                 </h3>
                 <p className="text-slate-600">
                   Yes, Southern Highlands features multiple guard-gated luxury sections including
-                  Southern Highlands Golf Club estates and exclusive enclaves with 24/7 security.
+                  Southern Highlands Golf Club estates and luxury enclaves with 24/7 security.
                   Non-gated sections also offer excellent value with community amenities.
                 </p>
               </div>

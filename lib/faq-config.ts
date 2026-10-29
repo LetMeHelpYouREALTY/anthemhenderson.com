@@ -81,7 +81,7 @@ export const FAQ_BY_PAGE_TYPE: Record<string, FAQ[]> = {
     { question: "How does the buying process work if I'm relocating from out of state?",
       answer: "Dr. Jan specializes in relocation buyers. She conducts live video tours, sends detailed neighborhood comparisons, and can represent you through the entire process remotely if needed. Most relocation clients close without ever physically visiting until moving day." },
     { question: "Is Las Vegas a good place to raise a family?",
-      answer: "Absolutely — especially in master-planned communities. Summerlin, Henderson, and North Las Vegas have excellent parks, rec centers, and highly-rated schools. The cost of living advantage means families can afford more space and better neighborhoods than they could in California or the Pacific Northwest." },
+      answer: "Absolutely — especially in master-planned communities. Summerlin, Henderson, and North Las Vegas have excellent parks, rec centers, and nearby public schools. The cost of living advantage means families can afford more space and better neighborhoods than they could in California or the Pacific Northwest." },
     { question: "What hidden costs should I know about moving to Nevada?",
       answer: "Las Vegas has relatively low property taxes (about 0.5–0.7% of assessed value) but Nevada has higher vehicle registration fees. HOA fees in master-planned communities run $50–$350/month. Dr. Jan gives every relocation client a full cost comparison worksheet before they commit." },
     { question: "How fast can I close if I find the right home?",
