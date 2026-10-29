@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Image from "next/image";
+import Link from "next/link";
 import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
@@ -59,9 +60,9 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
           <nav className="mb-6 text-sm">
             <ol className="flex items-center space-x-2 text-slate-600">
               <li>
-                <a href="/" className="hover:text-blue-600">
+                <Link href="/" className="hover:text-blue-600">
                   Home
-                </a>
+                </Link>
               </li>
               <li>/</li>
               <li>
