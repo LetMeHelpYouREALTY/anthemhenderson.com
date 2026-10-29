@@ -171,7 +171,7 @@ export default function LuxuryHomesPage() {
               {[
                 {
                   icon: Shield,
-                  title: "Trusted Advisor", desc: "A Top 1% Las Vegas REALTOR® whose reputation attracts serious, qualified buyers to your property",
+                  title: "Trusted Advisor", desc: "A Las Vegas REALTOR® whose reputation attracts serious, qualified buyers to your property",
                 },
                 {
                   icon: Globe,
@@ -215,7 +215,7 @@ export default function LuxuryHomesPage() {
                 $1 million to over $10 million, and every transaction receives my full attention."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, REALTOR® | In Real Estate Since 1983
+                — Dr. Jan Duffy, REALTOR® | Licensed Since 2008
               </cite>
             </div>
           </section>

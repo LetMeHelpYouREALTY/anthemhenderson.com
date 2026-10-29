@@ -57,8 +57,8 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Get In Touch</h2>
               <p className="text-slate-700 mb-8">
                 Whether you're buying your first home, selling a luxury property, or exploring
-                investment opportunities, I'm here to provide expert guidance as a Top 1% Las Vegas REALTOR®. In real estate since 1983 
-                with $127M+ in closed transactions.
+                investment opportunities, I'm here to provide expert guidance as a Las Vegas REALTOR®. Licensed since 2008 · 35 years in Las Vegas 
+                with $127M+ in Dr. Duffy Group career sales.
               </p>
 
               {/* NAP Information */}
@@ -160,7 +160,7 @@ export default function ContactPage() {
               {/* Credentials */}
               <div className="p-4 bg-blue-50 rounded-lg">
                 <p className="text-sm text-slate-700">
-                  <strong>Dr. Jan Duffy, REALTOR®</strong><br /> In real estate since 1983
+                  <strong>Dr. Jan Duffy, REALTOR®</strong><br /> Licensed since 2008 · 35 years in Las Vegas
                 </p>
               </div>
             </div>
@@ -186,13 +186,13 @@ export default function ContactPage() {
                   <div className="flex items-start">
                     <Shield className="h-5 w-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                     <p className="text-slate-300 text-sm">
-                      <strong className="text-white">Trusted Advisor:</strong> A Top 1% Las Vegas REALTOR®.
+                      <strong className="text-white">Trusted Advisor:</strong> A Las Vegas REALTOR®.
                     </p>
                   </div>
                   <div className="flex items-start">
                     <Star className="h-5 w-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                     <p className="text-slate-300 text-sm">
-                      <strong className="text-white">Proven Results:</strong> $127M+ in closed transactions; in real estate since 1983.
+                      <strong className="text-white">Proven Results:</strong> $127M+ in closed transactions; licensed since 2008 · 35 years in Las Vegas.
                     </p>
                   </div>
                   <div className="flex items-start">

@@ -52,12 +52,12 @@ export default function GoogleBusinessPage() {
                 <div>
                   <div className="flex items-center gap-2 mb-4">
                     <Award className="h-6 w-6 text-yellow-400" />
-                    <span className="text-yellow-400 font-semibold">Top 1% Las Vegas REALTOR®</span>
+                    <span className="text-yellow-400 font-semibold">Las Vegas REALTOR®</span>
                   </div>
                   <h1 className="text-4xl md:text-5xl font-bold mb-4">
                     Dr. Jan Duffy
                   </h1>
-                  <p className="text-xl text-blue-200 mb-2">REALTOR®</p> <p className="text-slate-300 mb-6">In real estate since 1983</p>
+                  <p className="text-xl text-blue-200 mb-2">REALTOR®</p> <p className="text-slate-300 mb-6">Licensed since 2008 · 35 years in Las Vegas</p>
                   
                   {/* NAP - Exact match to GBP */}
                   <div className="space-y-3">

@@ -321,7 +321,7 @@ export default function Home() {
                         <div className="mt-3 text-center">
                           <p className="text-base font-semibold text-foreground">Dr. Jan Duffy</p>
                           <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
-                            Top 1% Las Vegas REALTOR®
+                            Las Vegas REALTOR®
                           </p>
                           <p className="mt-1 text-xs text-muted-foreground">
                             Anthem Henderson specialist
@@ -349,7 +349,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="mt-4 rounded-lg border border-border bg-card p-4 text-center">
-                      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground"> Licensed in Nevada </p> <p className="mt-1 text-xs text-muted-foreground"> In real estate since 1983 </p>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground"> Licensed in Nevada </p> <p className="mt-1 text-xs text-muted-foreground"> Licensed since 2008 · 35 years in Las Vegas </p>
                       <p className="mt-3 text-xs text-muted-foreground">
                         {officeInfo.address.full}
                       </p>
