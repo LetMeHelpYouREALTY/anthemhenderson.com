@@ -1,38 +1,26 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import RouteJsonLd from "@/components/seo/RouteJsonLd";
-import { createPageMetadata, normalizePath } from "@/lib/page-seo";
+import { createPageMetadata } from "@/lib/page-seo";
 import { siteConfig } from "@/lib/site-config";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const pathname = normalizePath((await headers()).get("x-pathname") || "/");
-  const pageMeta = createPageMetadata(pathname);
-  const pageTitle =
-    typeof pageMeta.title === "string"
-      ? pageMeta.title
-      : "Homes for Sale in Anthem Henderson, NV";
+// Static root metadata. Each page exports its own metadata via
+// createPageMetadata(path), so the layout no longer reads request headers.
+// Reading headers() here forced every route into dynamic rendering.
+const homeMeta = createPageMetadata("/");
 
-  // Preserve absolute titles (e.g. homepage) — do not wrap them in the template.
-  const titleIsAbsolute =
-    typeof pageMeta.title === "object" &&
-    pageMeta.title !== null &&
-    "absolute" in pageMeta.title;
-
-  return {
-    ...pageMeta,
-    metadataBase: new URL(siteConfig.url),
-    title: titleIsAbsolute
-      ? pageMeta.title
-      : {
-          default: `${pageTitle} | Anthem Henderson | Homes By Dr. Jan Duffy`,
-          template: "%s | Anthem Henderson | Homes By Dr. Jan Duffy",
-        },
-  };
-}
+export const metadata: Metadata = {
+  ...homeMeta,
+  alternates: undefined,
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Homes for Sale in Anthem Henderson, NV | Anthem Henderson | Homes By Dr. Jan Duffy",
+    template: "%s | Anthem Henderson | Homes By Dr. Jan Duffy",
+  },
+};
 
 export default function RootLayout({
   children,

@@ -1,4 +1,6 @@
-import { headers } from "next/headers";
+"use client";
+
+import { usePathname } from "next/navigation";
 import SchemaScript from "@/components/SchemaScript";
 import {
   combineSchemas,
@@ -12,8 +14,10 @@ import { buildPageSchemas, normalizePath } from "@/lib/page-seo";
  * Injects sitewide LocalBusiness/WebSite schema plus per-route
  * WebPage + Breadcrumb + FAQ JSON-LD on every page.
  */
-export default async function RouteJsonLd() {
-  const pathname = normalizePath((await headers()).get("x-pathname") || "/");
+export default function RouteJsonLd() {
+  // usePathname() resolves during prerender, so this JSON-LD is still in the
+  // initial HTML without making the route dynamic.
+  const pathname = normalizePath(usePathname() || "/");
   const sitewide = combineSchemas(
     generateRealEstateAgentSchema(),
     generateWebSiteSchema(),
