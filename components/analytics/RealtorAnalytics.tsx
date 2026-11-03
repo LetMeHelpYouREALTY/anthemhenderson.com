@@ -2,12 +2,13 @@
 // Realtor GA4 kit v1.2 (2026-11-03). Drop into app/components/ and render once in app/layout.tsx:
 //   <RealtorAnalytics siteName="Skye Canyon" />
 // Env vars (Vercel): NEXT_PUBLIC_GA_ID = this site's own ID (optional)
-//                    NEXT_PUBLIC_GA_ROLLUP_ID = shared Las Vegas Portfolio ID (team-level shared var)
+//                    NEXT_PUBLIC_GA_ROLLUP_ID = shared Las Vegas Portfolio ID (defaults to G-8CHTB4H2WB)
 import Script from "next/script";
 import { useEffect } from "react";
 
 const SITE_ID = process.env.NEXT_PUBLIC_GA_ID;
-const ROLLUP_ID = process.env.NEXT_PUBLIC_GA_ROLLUP_ID;
+// Las Vegas Portfolio, GA4 property 562151191. Measurement IDs are public, so a default is safe.
+const ROLLUP_ID = process.env.NEXT_PUBLIC_GA_ROLLUP_ID || "G-8CHTB4H2WB";
 const IDS = [ROLLUP_ID, SITE_ID].filter(
   (id): id is string => !!id && id !== "G-XXXXXXXXXX",
 );
