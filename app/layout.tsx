@@ -7,6 +7,7 @@ import Script from "next/script";
 import RouteJsonLd from "@/components/seo/RouteJsonLd";
 import { createPageMetadata, normalizePath } from "@/lib/page-seo";
 import { siteConfig } from "@/lib/site-config";
+import RealtorAnalytics from "../components/analytics/RealtorAnalytics";
 
 export async function generateMetadata(): Promise<Metadata> {
   const pathname = normalizePath((await headers()).get("x-pathname") || "/");
@@ -59,6 +60,7 @@ export default function RootLayout({
         `}</Script>
         {children}
         <Analytics />
+        <RealtorAnalytics siteName="anthemhenderson.com" />
       </body>
     </html>
   );
